@@ -24,11 +24,24 @@ class NewsViewController: UIViewController {
         self.tableView.dataSource = self
         
         registerCustomCells()
+        addNewsNavigationButton()
     }
     
     private func registerCustomCells() {
         let nib = UINib(nibName: self.newsCellIdentifier, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: self.newsCellIdentifier)
+    }
+    
+    func addNewsNavigationButton() {
+        let addNewsNavigationButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewsAction(sender:)))
+        navigationItem.rightBarButtonItem = addNewsNavigationButton
+    }
+    
+    @objc func addNewsAction(sender: UIBarButtonItem) {
+        if let addNewsViewController = storyboard?.instantiateViewController(identifier: "AddNewsViewController") as? AddNewsViewController {
+            addNewsViewController.delegate = self
+            navigationController?.pushViewController(addNewsViewController, animated: true)
+        }
     }
     
 
@@ -46,7 +59,7 @@ class NewsViewController: UIViewController {
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.category?.news.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,9 +67,42 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         {
             return UITableViewCell()
         }
-        cell.titleLabel.text = "Title Label Test"
-        cell.dateLabel.text = "Date Label Test"
+        if let news = self.category?.news[indexPath.row] {
+            cell.setupCell(news: news)
+        }
+        cell.selectionStyle = .none
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let addNewsViewController = storyboard?.instantiateViewController(identifier: "AddNewsViewController") as? AddNewsViewController {
+            addNewsViewController.news = self.category?.news[indexPath.row]
+            navigationController?.pushViewController(addNewsViewController, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.category?.news.remove(at: indexPath.row)
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.endUpdates()
+        }
+    }
+}
+
+extension NewsViewController: AddNewsViewControllerProtocol {
+    func addNews(news: News) {
+        self.category?.news.append(news)
+        navigationController?.popViewController(animated: true)
+        self.tableView.reloadData()
+    }
 }

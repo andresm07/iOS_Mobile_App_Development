@@ -20,6 +20,8 @@
 		842F621E24259C61005F89FF /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F621D24259C61005F89FF /* News.swift */; };
 		842F62242425AC74005F89FF /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F62222425AC74005F89FF /* NewsTableViewCell.swift */; };
 		842F62252425AC74005F89FF /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842F62232425AC74005F89FF /* NewsTableViewCell.xib */; };
+		842F6228242659D9005F89FF /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F6227242659D9005F89FF /* Date+Formatter.swift */; };
+		842F622A242660DE005F89FF /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F6229242660DE005F89FF /* AddNewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		842F621D24259C61005F89FF /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		842F62222425AC74005F89FF /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		842F62232425AC74005F89FF /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		842F6227242659D9005F89FF /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		842F6229242660DE005F89FF /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		842F61FA2425864D005F89FF /* Clase4 */ = {
 			isa = PBXGroup;
 			children = (
+				842F622624265920005F89FF /* Extensions */,
 				842F621A24259C2A005F89FF /* Models */,
 				842F62142425995A005F89FF /* Custom Cells */,
 				842F621324258B57005F89FF /* Controllers */,
@@ -88,6 +93,7 @@
 			children = (
 				842F621124258ACD005F89FF /* NewsViewController.swift */,
 				842F620F24258AC0005F89FF /* CategoriesViewController.swift */,
+				842F6229242660DE005F89FF /* AddNewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +132,14 @@
 				842F62232425AC74005F89FF /* NewsTableViewCell.xib */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		842F622624265920005F89FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				842F6227242659D9005F89FF /* Date+Formatter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +222,8 @@
 				842F621024258AC0005F89FF /* CategoriesViewController.swift in Sources */,
 				842F621E24259C61005F89FF /* News.swift in Sources */,
 				842F621224258ACD005F89FF /* NewsViewController.swift in Sources */,
+				842F622A242660DE005F89FF /* AddNewsViewController.swift in Sources */,
+				842F6228242659D9005F89FF /* Date+Formatter.swift in Sources */,
 				842F621C24259C53005F89FF /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

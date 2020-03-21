@@ -24,4 +24,9 @@ class NewsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    public func setupCell(news: News) {
+        self.titleLabel.text = news.title
+        self.dateLabel.text = news.date.getFormattedDate(dateStyle: .short, timeStyle: .short)
+    }
+    
 }

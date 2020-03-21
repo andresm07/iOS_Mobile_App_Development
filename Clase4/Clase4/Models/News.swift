@@ -9,7 +9,7 @@
 import Foundation
 
 struct News {
-    var date: Date
+    var date = Date()
     var title: String
-    var description: String
+    var descriptionNews: String
 }
