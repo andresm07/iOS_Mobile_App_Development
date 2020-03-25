@@ -10,6 +10,9 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var quantityLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,12 @@ class ProductTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(product: Product) {
+        self.titleLabel.text = product.name
+        self.productImage.image = UIImage(named: product.imageName)
+        self.quantityLabel.text = String(product.quantity)
     }
     
 }

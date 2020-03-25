@@ -27,6 +27,7 @@ class AddProductTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         if let product = self.product {
+            
 //            titleTextField.text = news.title
 //            titleTextField.isUserInteractionEnabled = false
 //            descriptionTextView.text = news.descriptionNews
