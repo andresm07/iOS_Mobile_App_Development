@@ -16,7 +16,12 @@ class AddProductTableViewController: UITableViewController {
     
     var product: Product?
     weak var delegate: AddProductTableViewControllerProtocol?
-
+    
+    
+    @IBOutlet weak var productNameTextField: UITextField!
+    @IBOutlet weak var productQuantityTextField: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,11 +32,11 @@ class AddProductTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         if let product = self.product {
-            
-//            titleTextField.text = news.title
-//            titleTextField.isUserInteractionEnabled = false
-//            descriptionTextView.text = news.descriptionNews
-//            descriptionTextView.isEditable = false
+            self.productNameTextField.text = product.name
+            self.productNameTextField.isUserInteractionEnabled = false
+            self.productQuantityTextField.text = String(product.quantity)
+            self.productQuantityTextField.isUserInteractionEnabled = false
+            self.dateLabel.text = product.date.getFormattedDate(dateStyle: .short, timeStyle: .short)
         } else {
             saveProductNavigationButton()
         }
@@ -44,15 +49,15 @@ class AddProductTableViewController: UITableViewController {
     }
     
     @objc func saveProductAction(sender: UIBarButtonItem) {
-//        if let title = titleTextField.text, title.count > 0, descriptionTextView.text.count > 0 {
-//            let news = News(title: title, descriptionNews: descriptionTextView.text)
-//            delegate?.addNews(news: news)
-//        } else {
-//            let alertController = UIAlertController(title: "Error", message: "Debe llenar los datos", preferredStyle: .alert)
-//            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            alertController.addAction(alertAction)
-//            present(alertController, animated: true, completion: nil)
-//        }
+        if let productName = self.productNameTextField.text, productName.count > 0, self.productQuantityTextField.text!.count > 0 {
+            let product = Product(name: productName, quantity: self.productQuantityTextField!.text!, imageName: "")
+            delegate?.addProduct(product: product)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "Debe llenar los datos", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+        }
     }
 
     // MARK: - Table view data source

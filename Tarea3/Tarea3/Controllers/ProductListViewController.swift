@@ -25,6 +25,11 @@ class ProductListViewController: UIViewController {
         
         registerCustomCells()
         addProductNavigationButton()
+        loadTestProducts()
+    }
+    
+    private func loadTestProducts() {
+        self.products.append(Product(name:"Prueba", quantity:"12", imageName:""))
     }
     
     private func registerCustomCells() {
@@ -64,6 +69,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         {
             return UITableViewCell()
         }
+        cell.setupCell(product: self.products[indexPath.row])
         return cell
     }
     
