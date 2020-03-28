@@ -14,6 +14,7 @@ class NewsViewController: UIViewController {
     var category: Category?
     
     let newsCellIdentifier = "NewsTableViewCell"
+    let realmManager = RealmManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,18 +92,22 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.category?.news.remove(at: indexPath.row)
-            self.tableView.beginUpdates()
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            self.tableView.endUpdates()
+            if let news = category?.news[indexPath.row] {
+                self.realmManager.deleteNews(news: news)
+                self.tableView.beginUpdates()
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                self.tableView.endUpdates()
+            }
         }
     }
 }
 
 extension NewsViewController: AddNewsViewControllerProtocol {
     func addNews(news: News) {
-        self.category?.news.append(news)
-        navigationController?.popViewController(animated: true)
-        self.tableView.reloadData()
+        if let category = self.category {
+            self.realmManager.addNewsToCategory(news: news, category: category)
+            navigationController?.popViewController(animated: true)
+            self.tableView.reloadData()
+        }
     }
 }

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var categories = [Category]()
+    var categories: Results<Category>?
     
     let categoryCellIdentifier = "CategoryTableViewCell"
     
@@ -28,10 +29,24 @@ class CategoriesViewController: UIViewController {
     }
     
     private func createCategories() {
-        self.categories.append(Category(name: "Economy", imageName: "Economy", news: [News]()))
-        self.categories.append(Category(name: "Incidents", imageName: "Incident", news: [News]()))
-        self.categories.append(Category(name: "Sports", imageName: "Sports", news: [News]()))
-        self.categories.append(Category(name: "Technology", imageName: "Technology", news: [News]()))
+//        self.categories.append(Category(name: "Economy", imageName: "Economy", news: [News]()))
+//        self.categories.append(Category(name: "Incidents", imageName: "Incident", news: [News]()))
+//        self.categories.append(Category(name: "Sports", imageName: "Sports", news: [News]()))
+//        self.categories.append(Category(name: "Technology", imageName: "Technology", news: [News]()))
+        
+        let realmManager = RealmManager()
+        let categories = realmManager.getAllCategories()
+        if let categories = categories, categories.isEmpty {
+            realmManager.insertCategory(name: "Economy", imageName: "Economy")
+            realmManager.insertCategory(name: "Incidents", imageName: "Incident")
+            realmManager.insertCategory(name: "Sports", imageName: "Sports")
+            realmManager.insertCategory(name: "Technology", imageName: "Tchnology")
+            print("CATEGORIES ADDED")
+            createCategories()
+        } else {
+            self.categories = categories
+            self.tableView.reloadData()
+        }
     }
     
     private func registerCustomCells() {
@@ -53,7 +68,7 @@ class CategoriesViewController: UIViewController {
 
 extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories.count
+        return self.categories?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,13 +76,15 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         {
             return UITableViewCell()
         }
-        cell.setupCell(category: self.categories[indexPath.row])
+        if let category = self.categories?[indexPath.row] {
+            cell.setupCell(category: category)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let newsViewController = storyboard?.instantiateViewController(identifier: "NewsViewController") as? NewsViewController {
-            newsViewController.category = self.categories[indexPath.row]
+        if let newsViewController = storyboard?.instantiateViewController(identifier: "NewsViewController") as? NewsViewController, let category = self.categories?[indexPath.row] {
+            newsViewController.category = category
             navigationController?.pushViewController(newsViewController, animated: true)
         }
     }

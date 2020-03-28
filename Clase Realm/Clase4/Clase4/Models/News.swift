@@ -7,9 +7,18 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct News {
-    var date = Date()
-    var title: String
-    var descriptionNews: String
+class News: Object {
+    @objc dynamic var date = Date()
+    @objc dynamic var title = ""
+    @objc dynamic var descriptionNews = ""
+    
+    let categories = LinkingObjects(fromType: Category.self, property: "news")
+    
+    convenience init(title: String, descriptionNews: String) {
+        self.init()
+        self.title = title
+        self.descriptionNews = descriptionNews
+    }
 }
