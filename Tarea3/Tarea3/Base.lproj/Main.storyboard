@@ -46,6 +46,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Zzx-qQ-KaD">
+                            <rect key="frame" x="0.0" y="186.5" width="414" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27q-7s-PR1">
+                                    <rect key="frame" x="180.93103448275861" y="5.5" width="50" height="49.999999999999972"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="27q-7s-PR1" firstAttribute="leading" secondItem="Zzx-qQ-KaD" secondAttribute="leading" constant="0.01" id="8Bq-mz-BGQ"/>
+                                <constraint firstAttribute="trailing" secondItem="27q-7s-PR1" secondAttribute="trailing" constant="0.01" id="Jro-hh-kLo"/>
+                                <constraint firstItem="27q-7s-PR1" firstAttribute="top" secondItem="Zzx-qQ-KaD" secondAttribute="top" constant="0.01" id="QR5-Du-Gko"/>
+                                <constraint firstAttribute="bottom" secondItem="27q-7s-PR1" secondAttribute="bottom" constant="0.01" id="jSc-ct-Vke"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="Lwm-v9-O16">
                                 <cells>
@@ -156,6 +172,7 @@
                     </tableView>
                     <connections>
                         <outlet property="dateLabel" destination="5os-i4-eIc" id="OVu-aN-Zjy"/>
+                        <outlet property="productIconImageView" destination="27q-7s-PR1" id="09m-N9-chA"/>
                         <outlet property="productNameTextField" destination="ENc-if-YEb" id="q2e-gh-oPx"/>
                         <outlet property="productQuantityTextField" destination="0wZ-MP-Sn2" id="9jZ-x0-1uk"/>
                     </connections>

@@ -21,6 +21,7 @@ class AddProductTableViewController: UITableViewController {
     @IBOutlet weak var productNameTextField: UITextField!
     @IBOutlet weak var productQuantityTextField: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var productIconImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class AddProductTableViewController: UITableViewController {
             self.productQuantityTextField.text = String(product.quantity)
             self.productQuantityTextField.isUserInteractionEnabled = false
             self.dateLabel.text = product.date.getFormattedDate(dateStyle: .short, timeStyle: .short)
+            self.productIconImageView.image = UIImage(named: product.imageName)
         } else {
             saveProductNavigationButton()
         }
@@ -50,7 +52,23 @@ class AddProductTableViewController: UITableViewController {
     
     @objc func saveProductAction(sender: UIBarButtonItem) {
         if let productName = self.productNameTextField.text, productName.count > 0, self.productQuantityTextField.text!.count > 0 {
-            let product = Product(name: productName, quantity: self.productQuantityTextField!.text!, imageName: "")
+            let randomImageChooser = Int.random(in: 1 ... 5)
+            var randomImageName = ""
+            switch randomImageChooser {
+            case 1:
+                randomImageName = "Product1"
+            case 2:
+                randomImageName = "Product2"
+            case 3:
+                randomImageName = "Product3"
+            case 4:
+                randomImageName = "Product4"
+            case 5:
+                randomImageName = "Product5"
+            default:
+                randomImageName = ""
+            }
+            let product = Product(name: productName, quantity: self.productQuantityTextField!.text!, imageName: randomImageName)
             delegate?.addProduct(product: product)
         } else {
             let alertController = UIAlertController(title: "Error", message: "Debe llenar los datos", preferredStyle: .alert)

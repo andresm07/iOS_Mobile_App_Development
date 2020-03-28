@@ -29,7 +29,7 @@ class ProductListViewController: UIViewController {
     }
     
     private func loadTestProducts() {
-        self.products.append(Product(name:"Prueba", quantity:"12", imageName:""))
+        self.products.append(Product(name:"Bread", quantity:"12", imageName:"Product5"))
     }
     
     private func registerCustomCells() {

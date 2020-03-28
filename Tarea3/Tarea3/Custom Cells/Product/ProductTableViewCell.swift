@@ -25,9 +25,9 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     func setupCell(product: Product) {
-        self.titleLabel.text = product.name
+        self.titleLabel.text = "Product " + product.name
         self.productImage.image = UIImage(named: product.imageName)
-        self.quantityLabel.text = String(product.quantity)
+        self.quantityLabel.text = "Quantity: " + String(product.quantity)
     }
     
 }
