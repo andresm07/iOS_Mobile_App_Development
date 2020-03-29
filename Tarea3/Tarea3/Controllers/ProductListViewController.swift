@@ -25,13 +25,14 @@ class ProductListViewController: UIViewController {
         
         registerCustomCells()
         addProductNavigationButton()
-        loadTestProducts()
-        productListSorter()
+        //loadTestProducts()
+        //productListSorter()
         
     }
     
     private func productListSorter() {
-        self.products.sorted() {$0.date > $1.date}
+        //self.products.sorted(by: {$0.date > $1.date})
+        self.products.reverse()
         self.tableView.reloadData()
     }
     
@@ -64,9 +65,9 @@ class ProductListViewController: UIViewController {
 
 extension ProductListViewController: AddProductTableViewControllerProtocol {
     func addProduct(product: Product) {
-        self.products.append(product)
+        self.products.insert(product, at: 0)
         navigationController?.popViewController(animated: true)
-        self.products.sorted() {$0.date > $1.date}
+        //self.products.reverse()
         self.tableView.reloadData()
     }
 }
