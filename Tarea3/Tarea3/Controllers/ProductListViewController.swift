@@ -26,10 +26,21 @@ class ProductListViewController: UIViewController {
         registerCustomCells()
         addProductNavigationButton()
         loadTestProducts()
+        productListSorter()
+        
+    }
+    
+    private func productListSorter() {
+        self.products.sorted() {$0.date > $1.date}
+        self.tableView.reloadData()
     }
     
     private func loadTestProducts() {
-        self.products.append(Product(name:"Bread", quantity:"12", imageName:"Product5"))
+        self.products.append(Product(name:"Product1", quantity:"12", imageName:"Product1"))
+        self.products.append(Product(name:"Product2", quantity:"12", imageName:"Product2"))
+        self.products.append(Product(name:"Product3", quantity:"12", imageName:"Product3"))
+        self.products.append(Product(name:"Product4", quantity:"12", imageName:"Product4"))
+        self.products.append(Product(name:"Product5", quantity:"12", imageName:"Product5"))
     }
     
     private func registerCustomCells() {
@@ -55,6 +66,7 @@ extension ProductListViewController: AddProductTableViewControllerProtocol {
     func addProduct(product: Product) {
         self.products.append(product)
         navigationController?.popViewController(animated: true)
+        self.products.sorted() {$0.date > $1.date}
         self.tableView.reloadData()
     }
 }
