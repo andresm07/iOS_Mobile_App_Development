@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ProductListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
     let productCellIdentifier = "ProductTableViewCell"
-    var products = [Product]()
+    let realmManager = RealmManager()
+    var products: Results<Product>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,12 @@ class ProductListViewController: UIViewController {
         
         registerCustomCells()
         addProductNavigationButton()
-        loadTestProducts()
+        //loadTestProducts()
     }
     
-    private func loadTestProducts() {
-        self.products.append(Product(name:"Bread", quantity:"12", imageName:"Product5"))
-    }
+//    private func loadTestProducts() {
+//        self.products.append(Product(name:"Bread", quantity:"12", imageName:"Product5"))
+//    }
     
     private func registerCustomCells() {
         let nib = UINib(nibName: self.productCellIdentifier, bundle: nil)
@@ -53,15 +55,13 @@ class ProductListViewController: UIViewController {
 
 extension ProductListViewController: AddProductTableViewControllerProtocol {
     func addProduct(product: Product) {
-        self.products.append(product)
-        navigationController?.popViewController(animated: true)
-        self.tableView.reloadData()
+        /*FALTA*/
     }
 }
 
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.products.count
+        return self.products?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,7 +69,9 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         {
             return UITableViewCell()
         }
-        cell.setupCell(product: self.products[indexPath.row])
+        if let product = self.products?[indexPath.row] {
+            cell.setupCell(product: product)
+        }
         return cell
     }
     
@@ -78,8 +80,8 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let addProductTableViewController = storyboard?.instantiateViewController(identifier: "AddProductTableViewController") as? AddProductTableViewController {
-            addProductTableViewController.product = self.products[indexPath.row]
+        if let addProductTableViewController = storyboard?.instantiateViewController(identifier: "AddProductTableViewController") as? AddProductTableViewController, let product = self.products?[indexPath.row] {
+            addProductTableViewController.product = product
             navigationController?.pushViewController(addProductTableViewController, animated: true)
         }
     }
@@ -90,7 +92,8 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.products.remove(at: indexPath.row)
+            /*FALTA*/
+            //self.products.remove(at: indexPath.row)
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.endUpdates()

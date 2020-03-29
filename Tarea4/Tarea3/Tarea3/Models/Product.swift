@@ -7,18 +7,31 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Product {
+class Product: Object {
+
+    @objc dynamic var identifier = NSUUID().uuidString
+    @objc dynamic var name = ""
+    @objc dynamic var quantity = ""
+    @objc dynamic var date = Date()
+    @objc dynamic var imageName = ""
     
-    var identifier = NSUUID().uuidString
-    var name: String
-    var quantity: String
-    var date = Date()
-    var imageName: String
-    
-    init(name: String, quantity: String, imageName: String) {
+    convenience init(name: String, quantity: String, imageName: String) {
+        self.init()
         self.name = name
         self.quantity = quantity
         self.imageName = imageName
     }
+    
+    override static func primaryKey() -> String? {
+        return "identifier"
+    }
+
+    override static func indexedProperties() -> [String] {
+        return ["identifier"]
+    }
 }
+
+
+
