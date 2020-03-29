@@ -18,9 +18,12 @@
 		845CA07C2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845CA07A2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib */; };
 		845CA07F243051E300B8BB12 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA07E243051E300B8BB12 /* Animal.swift */; };
 		845CA081243051EE00B8BB12 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA080243051EE00B8BB12 /* Owner.swift */; };
+		F97EB4C926BEFF27EB6732F1 /* Pods_AsignacionAdicional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6DECDA6B811D756667069C /* Pods_AsignacionAdicional.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A6DECDA6B811D756667069C /* Pods_AsignacionAdicional.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsignacionAdicional.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ACB46A7DB5D6AA9AA2AC90A /* Pods-AsignacionAdicional.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsignacionAdicional.release.xcconfig"; path = "Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional.release.xcconfig"; sourceTree = "<group>"; };
 		845CA05B2430510B00B8BB12 /* AsignacionAdicional.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsignacionAdicional.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845CA05E2430510B00B8BB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845CA0602430510B00B8BB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		845CA07A2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDisplayTableViewCell.xib; sourceTree = "<group>"; };
 		845CA07E243051E300B8BB12 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		845CA080243051EE00B8BB12 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		B47561842B54F74C7A1CFEC8 /* Pods-AsignacionAdicional.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsignacionAdicional.debug.xcconfig"; path = "Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97EB4C926BEFF27EB6732F1 /* Pods_AsignacionAdicional.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41BD8CA41294ED40ACA9EC97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A6DECDA6B811D756667069C /* Pods_AsignacionAdicional.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		845CA0522430510B00B8BB12 = {
 			isa = PBXGroup;
 			children = (
 				845CA05D2430510B00B8BB12 /* AsignacionAdicional */,
 				845CA05C2430510B00B8BB12 /* Products */,
+				CAA583EF4AF6225668C684C5 /* Pods */,
+				41BD8CA41294ED40ACA9EC97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +129,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CAA583EF4AF6225668C684C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B47561842B54F74C7A1CFEC8 /* Pods-AsignacionAdicional.debug.xcconfig */,
+				2ACB46A7DB5D6AA9AA2AC90A /* Pods-AsignacionAdicional.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 845CA06F2430510C00B8BB12 /* Build configuration list for PBXNativeTarget "AsignacionAdicional" */;
 			buildPhases = (
+				2A6756511A04DD4A5F10DB1F /* [CP] Check Pods Manifest.lock */,
 				845CA0572430510B00B8BB12 /* Sources */,
 				845CA0582430510B00B8BB12 /* Frameworks */,
 				845CA0592430510B00B8BB12 /* Resources */,
+				46C0F0840D49B0375D650719 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +207,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A6756511A04DD4A5F10DB1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AsignacionAdicional-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46C0F0840D49B0375D650719 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		845CA0572430510B00B8BB12 /* Sources */ = {
@@ -334,6 +403,7 @@
 		};
 		845CA0702430510C00B8BB12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B47561842B54F74C7A1CFEC8 /* Pods-AsignacionAdicional.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -351,6 +421,7 @@
 		};
 		845CA0712430510C00B8BB12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACB46A7DB5D6AA9AA2AC90A /* Pods-AsignacionAdicional.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
