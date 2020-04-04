@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CarBrandHeaderView" customModule="TableViewWithCustomHeaders" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-23-6Im">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fBz-Ej-Wcm">
+                            <rect key="frame" x="10" y="0.0" width="394" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgq-8A-U7U">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-7i-4fn">
+                                    <rect key="frame" x="202" y="0.0" width="192" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="fBz-Ej-Wcm" secondAttribute="bottom" constant="0.01" id="N7K-um-ZNE"/>
+                        <constraint firstItem="fBz-Ej-Wcm" firstAttribute="leading" secondItem="zOX-23-6Im" secondAttribute="leading" constant="10" id="U20-gm-KmU"/>
+                        <constraint firstAttribute="trailing" secondItem="fBz-Ej-Wcm" secondAttribute="trailing" constant="10" id="fmK-jE-I80"/>
+                        <constraint firstItem="fBz-Ej-Wcm" firstAttribute="top" secondItem="zOX-23-6Im" secondAttribute="top" constant="0.01" id="o2c-d5-ZgR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="zOX-23-6Im" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="0.01" id="Avg-F1-afP"/>
+                <constraint firstItem="zOX-23-6Im" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="0.01" id="EYk-9j-B7l"/>
+                <constraint firstAttribute="bottom" secondItem="zOX-23-6Im" secondAttribute="bottom" constant="0.01" id="MYS-1B-t52"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zOX-23-6Im" secondAttribute="trailing" constant="0.01" id="XXi-7k-j2e"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="countryLabel" destination="1pG-7i-4fn" id="fO9-nc-X31"/>
+                <outlet property="nameLabel" destination="fgq-8A-U7U" id="CgB-bx-pBG"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="106"/>
+        </view>
+    </objects>
+</document>

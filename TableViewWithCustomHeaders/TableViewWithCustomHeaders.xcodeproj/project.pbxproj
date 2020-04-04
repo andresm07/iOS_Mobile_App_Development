@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6ABEE055E6AC451AA218ECE0 /* Pods_TableViewWithCustomHeaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ACDF11BC8857CB3C8CDD51 /* Pods_TableViewWithCustomHeaders.framework */; };
+		842D80A22438D93100975AE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80A12438D93100975AE9 /* AppDelegate.swift */; };
+		842D80A42438D93100975AE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80A32438D93100975AE9 /* SceneDelegate.swift */; };
+		842D80A92438D93100975AE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D80A72438D93100975AE9 /* Main.storyboard */; };
+		842D80AB2438D93400975AE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842D80AA2438D93400975AE9 /* Assets.xcassets */; };
+		842D80AE2438D93400975AE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D80AC2438D93400975AE9 /* LaunchScreen.storyboard */; };
+		842D80B72438D97700975AE9 /* CarBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80B62438D97700975AE9 /* CarBrand.swift */; };
+		842D80B92438D9AD00975AE9 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80B82438D9AD00975AE9 /* CarModel.swift */; };
+		842D80BC2438DF4000975AE9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80BB2438DF4000975AE9 /* R.generated.swift */; };
+		842D80C02438DFA900975AE9 /* CarModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80BE2438DFA900975AE9 /* CarModelTableViewCell.swift */; };
+		842D80C12438DFA900975AE9 /* CarModelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842D80BF2438DFA900975AE9 /* CarModelTableViewCell.xib */; };
+		842D80C42438DFD400975AE9 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80C32438DFD400975AE9 /* CarListViewController.swift */; };
+		842D80C62438F22500975AE9 /* CarBrandHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80C52438F22500975AE9 /* CarBrandHeaderView.swift */; };
+		842D80CC2438F2CC00975AE9 /* CarBrandHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842D80CB2438F2CC00975AE9 /* CarBrandHeaderView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		842D809E2438D93100975AE9 /* TableViewWithCustomHeaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewWithCustomHeaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842D80A12438D93100975AE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842D80A32438D93100975AE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		842D80A82438D93100975AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		842D80AA2438D93400975AE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842D80AD2438D93400975AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		842D80AF2438D93400975AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842D80B62438D97700975AE9 /* CarBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrand.swift; sourceTree = "<group>"; };
+		842D80B82438D9AD00975AE9 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		842D80BB2438DF4000975AE9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		842D80BE2438DFA900975AE9 /* CarModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModelTableViewCell.swift; sourceTree = "<group>"; };
+		842D80BF2438DFA900975AE9 /* CarModelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarModelTableViewCell.xib; sourceTree = "<group>"; };
+		842D80C32438DFD400975AE9 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		842D80C52438F22500975AE9 /* CarBrandHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandHeaderView.swift; sourceTree = "<group>"; };
+		842D80CB2438F2CC00975AE9 /* CarBrandHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarBrandHeaderView.xib; sourceTree = "<group>"; };
+		A9C8A5EE5664705839A18E82 /* Pods-TableViewWithCustomHeaders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewWithCustomHeaders.debug.xcconfig"; path = "Target Support Files/Pods-TableViewWithCustomHeaders/Pods-TableViewWithCustomHeaders.debug.xcconfig"; sourceTree = "<group>"; };
+		D5ACDF11BC8857CB3C8CDD51 /* Pods_TableViewWithCustomHeaders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableViewWithCustomHeaders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02A137881E6B173E8C21687 /* Pods-TableViewWithCustomHeaders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewWithCustomHeaders.release.xcconfig"; path = "Target Support Files/Pods-TableViewWithCustomHeaders/Pods-TableViewWithCustomHeaders.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842D809B2438D93100975AE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ABEE055E6AC451AA218ECE0 /* Pods_TableViewWithCustomHeaders.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A9B1EFB077A89DF72425F1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9C8A5EE5664705839A18E82 /* Pods-TableViewWithCustomHeaders.debug.xcconfig */,
+				E02A137881E6B173E8C21687 /* Pods-TableViewWithCustomHeaders.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		842D80952438D93100975AE9 = {
+			isa = PBXGroup;
+			children = (
+				842D80BB2438DF4000975AE9 /* R.generated.swift */,
+				842D80A02438D93100975AE9 /* TableViewWithCustomHeaders */,
+				842D809F2438D93100975AE9 /* Products */,
+				2A9B1EFB077A89DF72425F1D /* Pods */,
+				B99AB38C1AC6DB8925B39399 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		842D809F2438D93100975AE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842D809E2438D93100975AE9 /* TableViewWithCustomHeaders.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		842D80A02438D93100975AE9 /* TableViewWithCustomHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				842D80C22438DFAF00975AE9 /* Controllers */,
+				842D80BD2438DF6900975AE9 /* Custom Cells */,
+				842D80B52438D96300975AE9 /* Models */,
+				842D80A12438D93100975AE9 /* AppDelegate.swift */,
+				842D80A32438D93100975AE9 /* SceneDelegate.swift */,
+				842D80A72438D93100975AE9 /* Main.storyboard */,
+				842D80AA2438D93400975AE9 /* Assets.xcassets */,
+				842D80AC2438D93400975AE9 /* LaunchScreen.storyboard */,
+				842D80AF2438D93400975AE9 /* Info.plist */,
+			);
+			path = TableViewWithCustomHeaders;
+			sourceTree = "<group>";
+		};
+		842D80B52438D96300975AE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				842D80B62438D97700975AE9 /* CarBrand.swift */,
+				842D80B82438D9AD00975AE9 /* CarModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		842D80BD2438DF6900975AE9 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				842D80C82438F25100975AE9 /* Car Brand Header */,
+				842D80C72438F23F00975AE9 /* Car Model Table View Cell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		842D80C22438DFAF00975AE9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				842D80C32438DFD400975AE9 /* CarListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		842D80C72438F23F00975AE9 /* Car Model Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				842D80BE2438DFA900975AE9 /* CarModelTableViewCell.swift */,
+				842D80BF2438DFA900975AE9 /* CarModelTableViewCell.xib */,
+			);
+			path = "Car Model Table View Cell";
+			sourceTree = "<group>";
+		};
+		842D80C82438F25100975AE9 /* Car Brand Header */ = {
+			isa = PBXGroup;
+			children = (
+				842D80C52438F22500975AE9 /* CarBrandHeaderView.swift */,
+				842D80CB2438F2CC00975AE9 /* CarBrandHeaderView.xib */,
+			);
+			path = "Car Brand Header";
+			sourceTree = "<group>";
+		};
+		B99AB38C1AC6DB8925B39399 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5ACDF11BC8857CB3C8CDD51 /* Pods_TableViewWithCustomHeaders.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842D809D2438D93100975AE9 /* TableViewWithCustomHeaders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842D80B22438D93400975AE9 /* Build configuration list for PBXNativeTarget "TableViewWithCustomHeaders" */;
+			buildPhases = (
+				B37B347E13CDD482EB966785 /* [CP] Check Pods Manifest.lock */,
+				842D80BA2438DD7800975AE9 /* ShellScript */,
+				842D809A2438D93100975AE9 /* Sources */,
+				842D809B2438D93100975AE9 /* Frameworks */,
+				842D809C2438D93100975AE9 /* Resources */,
+				834D63EBD0E8B32E3D2A8928 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TableViewWithCustomHeaders;
+			productName = TableViewWithCustomHeaders;
+			productReference = 842D809E2438D93100975AE9 /* TableViewWithCustomHeaders.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842D80962438D93100975AE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = admin;
+				TargetAttributes = {
+					842D809D2438D93100975AE9 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 842D80992438D93100975AE9 /* Build configuration list for PBXProject "TableViewWithCustomHeaders" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 842D80952438D93100975AE9;
+			productRefGroup = 842D809F2438D93100975AE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842D809D2438D93100975AE9 /* TableViewWithCustomHeaders */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		842D809C2438D93100975AE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842D80C12438DFA900975AE9 /* CarModelTableViewCell.xib in Resources */,
+				842D80CC2438F2CC00975AE9 /* CarBrandHeaderView.xib in Resources */,
+				842D80AE2438D93400975AE9 /* LaunchScreen.storyboard in Resources */,
+				842D80AB2438D93400975AE9 /* Assets.xcassets in Resources */,
+				842D80A92438D93100975AE9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		834D63EBD0E8B32E3D2A8928 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableViewWithCustomHeaders/Pods-TableViewWithCustomHeaders-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableViewWithCustomHeaders/Pods-TableViewWithCustomHeaders-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TableViewWithCustomHeaders/Pods-TableViewWithCustomHeaders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		842D80BA2438DD7800975AE9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		B37B347E13CDD482EB966785 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TableViewWithCustomHeaders-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842D809A2438D93100975AE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842D80B92438D9AD00975AE9 /* CarModel.swift in Sources */,
+				842D80A22438D93100975AE9 /* AppDelegate.swift in Sources */,
+				842D80B72438D97700975AE9 /* CarBrand.swift in Sources */,
+				842D80C42438DFD400975AE9 /* CarListViewController.swift in Sources */,
+				842D80C62438F22500975AE9 /* CarBrandHeaderView.swift in Sources */,
+				842D80C02438DFA900975AE9 /* CarModelTableViewCell.swift in Sources */,
+				842D80A42438D93100975AE9 /* SceneDelegate.swift in Sources */,
+				842D80BC2438DF4000975AE9 /* R.generated.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		842D80A72438D93100975AE9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842D80A82438D93100975AE9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		842D80AC2438D93400975AE9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842D80AD2438D93400975AE9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		842D80B02438D93400975AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		842D80B12438D93400975AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		842D80B32438D93400975AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9C8A5EE5664705839A18E82 /* Pods-TableViewWithCustomHeaders.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TableViewWithCustomHeaders/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = andresm07.TableViewWithCustomHeaders;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		842D80B42438D93400975AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E02A137881E6B173E8C21687 /* Pods-TableViewWithCustomHeaders.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TableViewWithCustomHeaders/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = andresm07.TableViewWithCustomHeaders;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		842D80992438D93100975AE9 /* Build configuration list for PBXProject "TableViewWithCustomHeaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842D80B02438D93400975AE9 /* Debug */,
+				842D80B12438D93400975AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842D80B22438D93400975AE9 /* Build configuration list for PBXNativeTarget "TableViewWithCustomHeaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842D80B32438D93400975AE9 /* Debug */,
+				842D80B42438D93400975AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842D80962438D93100975AE9 /* Project object */;
+}

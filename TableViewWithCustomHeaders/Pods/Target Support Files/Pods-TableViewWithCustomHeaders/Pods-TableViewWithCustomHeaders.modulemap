@@ -1,0 +1,6 @@
+framework module Pods_TableViewWithCustomHeaders {
+  umbrella header "Pods-TableViewWithCustomHeaders-umbrella.h"
+
+  export *
+  module * { export * }
+}
