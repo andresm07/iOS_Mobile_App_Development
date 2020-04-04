@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E302C37E0601DFA567F059E /* Pods_Quiz3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E7ECA7DE475C1B2F54E38 /* Pods_Quiz3.framework */; };
+		842D80782438CBC400975AE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80772438CBC400975AE9 /* AppDelegate.swift */; };
+		842D807A2438CBC400975AE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80792438CBC400975AE9 /* SceneDelegate.swift */; };
+		842D807C2438CBC400975AE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D807B2438CBC400975AE9 /* ViewController.swift */; };
+		842D807F2438CBC400975AE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D807D2438CBC400975AE9 /* Main.storyboard */; };
+		842D80812438CBC700975AE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842D80802438CBC700975AE9 /* Assets.xcassets */; };
+		842D80842438CBC700975AE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D80822438CBC700975AE9 /* LaunchScreen.storyboard */; };
+		842D808C2438CCBB00975AE9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D808B2438CCBB00975AE9 /* Item.swift */; };
+		842D808E2438CE8A00975AE9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D808D2438CE8A00975AE9 /* RealmManager.swift */; };
+		842D80912438CF4E00975AE9 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D808F2438CF4E00975AE9 /* ItemTableViewCell.swift */; };
+		842D80922438CF4E00975AE9 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842D80902438CF4E00975AE9 /* ItemTableViewCell.xib */; };
+		842D80942438D02100975AE9 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D80932438D02100975AE9 /* Date+Formatter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A33CF93A1B8663661FA4B93 /* Pods-Quiz3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz3.debug.xcconfig"; path = "Target Support Files/Pods-Quiz3/Pods-Quiz3.debug.xcconfig"; sourceTree = "<group>"; };
+		1EF83AC9B7B60B25891A31DE /* Pods-Quiz3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz3.release.xcconfig"; path = "Target Support Files/Pods-Quiz3/Pods-Quiz3.release.xcconfig"; sourceTree = "<group>"; };
+		842D80742438CBC400975AE9 /* Quiz3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842D80772438CBC400975AE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842D80792438CBC400975AE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		842D807B2438CBC400975AE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		842D807E2438CBC400975AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		842D80802438CBC700975AE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842D80832438CBC700975AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		842D80852438CBC700975AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842D808B2438CCBB00975AE9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		842D808D2438CE8A00975AE9 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		842D808F2438CF4E00975AE9 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		842D80902438CF4E00975AE9 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		842D80932438D02100975AE9 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		C42E7ECA7DE475C1B2F54E38 /* Pods_Quiz3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiz3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842D80712438CBC400975AE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E302C37E0601DFA567F059E /* Pods_Quiz3.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5398DA28FD497E1F3EC9E323 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A33CF93A1B8663661FA4B93 /* Pods-Quiz3.debug.xcconfig */,
+				1EF83AC9B7B60B25891A31DE /* Pods-Quiz3.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		842D806B2438CBC400975AE9 = {
+			isa = PBXGroup;
+			children = (
+				842D80762438CBC400975AE9 /* Quiz3 */,
+				842D80752438CBC400975AE9 /* Products */,
+				5398DA28FD497E1F3EC9E323 /* Pods */,
+				B95A3C30E49E2CE6E26E7084 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		842D80752438CBC400975AE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842D80742438CBC400975AE9 /* Quiz3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		842D80762438CBC400975AE9 /* Quiz3 */ = {
+			isa = PBXGroup;
+			children = (
+				842D80772438CBC400975AE9 /* AppDelegate.swift */,
+				842D80792438CBC400975AE9 /* SceneDelegate.swift */,
+				842D807B2438CBC400975AE9 /* ViewController.swift */,
+				842D807D2438CBC400975AE9 /* Main.storyboard */,
+				842D80802438CBC700975AE9 /* Assets.xcassets */,
+				842D80822438CBC700975AE9 /* LaunchScreen.storyboard */,
+				842D80852438CBC700975AE9 /* Info.plist */,
+				842D808B2438CCBB00975AE9 /* Item.swift */,
+				842D808D2438CE8A00975AE9 /* RealmManager.swift */,
+				842D808F2438CF4E00975AE9 /* ItemTableViewCell.swift */,
+				842D80902438CF4E00975AE9 /* ItemTableViewCell.xib */,
+				842D80932438D02100975AE9 /* Date+Formatter.swift */,
+			);
+			path = Quiz3;
+			sourceTree = "<group>";
+		};
+		B95A3C30E49E2CE6E26E7084 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C42E7ECA7DE475C1B2F54E38 /* Pods_Quiz3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842D80732438CBC400975AE9 /* Quiz3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842D80882438CBC700975AE9 /* Build configuration list for PBXNativeTarget "Quiz3" */;
+			buildPhases = (
+				1335B1A752686068B097DD12 /* [CP] Check Pods Manifest.lock */,
+				842D80702438CBC400975AE9 /* Sources */,
+				842D80712438CBC400975AE9 /* Frameworks */,
+				842D80722438CBC400975AE9 /* Resources */,
+				EB1DD4809FBE15D67EBA7A32 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quiz3;
+			productName = Quiz3;
+			productReference = 842D80742438CBC400975AE9 /* Quiz3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842D806C2438CBC400975AE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = admin;
+				TargetAttributes = {
+					842D80732438CBC400975AE9 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 842D806F2438CBC400975AE9 /* Build configuration list for PBXProject "Quiz3" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 842D806B2438CBC400975AE9;
+			productRefGroup = 842D80752438CBC400975AE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842D80732438CBC400975AE9 /* Quiz3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		842D80722438CBC400975AE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842D80922438CF4E00975AE9 /* ItemTableViewCell.xib in Resources */,
+				842D80842438CBC700975AE9 /* LaunchScreen.storyboard in Resources */,
+				842D80812438CBC700975AE9 /* Assets.xcassets in Resources */,
+				842D807F2438CBC400975AE9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1335B1A752686068B097DD12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quiz3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1DD4809FBE15D67EBA7A32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quiz3/Pods-Quiz3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quiz3/Pods-Quiz3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quiz3/Pods-Quiz3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842D80702438CBC400975AE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842D808C2438CCBB00975AE9 /* Item.swift in Sources */,
+				842D807C2438CBC400975AE9 /* ViewController.swift in Sources */,
+				842D808E2438CE8A00975AE9 /* RealmManager.swift in Sources */,
+				842D80782438CBC400975AE9 /* AppDelegate.swift in Sources */,
+				842D80942438D02100975AE9 /* Date+Formatter.swift in Sources */,
+				842D80912438CF4E00975AE9 /* ItemTableViewCell.swift in Sources */,
+				842D807A2438CBC400975AE9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		842D807D2438CBC400975AE9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842D807E2438CBC400975AE9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		842D80822438CBC700975AE9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842D80832438CBC700975AE9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		842D80862438CBC700975AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		842D80872438CBC700975AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		842D80892438CBC700975AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A33CF93A1B8663661FA4B93 /* Pods-Quiz3.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Quiz3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = andresm07.Quiz3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		842D808A2438CBC700975AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF83AC9B7B60B25891A31DE /* Pods-Quiz3.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Quiz3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = andresm07.Quiz3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		842D806F2438CBC400975AE9 /* Build configuration list for PBXProject "Quiz3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842D80862438CBC700975AE9 /* Debug */,
+				842D80872438CBC700975AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842D80882438CBC700975AE9 /* Build configuration list for PBXNativeTarget "Quiz3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842D80892438CBC700975AE9 /* Debug */,
+				842D808A2438CBC700975AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842D806C2438CBC400975AE9 /* Project object */;
+}
