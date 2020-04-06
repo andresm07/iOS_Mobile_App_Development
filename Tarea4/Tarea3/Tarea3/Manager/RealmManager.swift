@@ -24,28 +24,28 @@ class RealmManager {
     }
     
     //Metodo sincrono
-    public func getAllCategories() -> Results<Product>? {
+    public func getAllProducts() -> Results<Product>? {
         let realm = try? Realm()
         return realm?.objects(Product.self)
     }
     
     //Metodo asincrono
-    public func getAllCategories(completionHandler:(_ products: Results<Product>?) -> Void) {
-        completionHandler(getAllCategories())
+    public func getAllProducts(completionHandler:(_ products: Results<Product>?) -> Void) {
+        completionHandler(getAllProducts())
     }
     
-    public func addProduct(/*FALTA*/) {
+    public func addProduct(product: Product, products: Results<Product>) {
         do {
             let realm = try Realm()
             try realm.write {
-                //category.news.append(news)
+                //
             }
         } catch {
             print("Realm Error")
         }
     }
     
-    public func deleteNews(product: Product) {
+    public func deleteProduct(product: Product) {
         do {
             let realm = try Realm()
             try realm.write {

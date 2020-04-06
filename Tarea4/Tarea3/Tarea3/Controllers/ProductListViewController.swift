@@ -27,12 +27,22 @@ class ProductListViewController: UIViewController {
         
         registerCustomCells()
         addProductNavigationButton()
-        //loadTestProducts()
+        loadTestProducts()
+        
     }
     
-//    private func loadTestProducts() {
-//        self.products.append(Product(name:"Bread", quantity:"12", imageName:"Product5"))
-//    }
+    private func loadTestProducts() {
+        let products = self.realmManager.getAllProducts()
+        if let products = products, products.isEmpty {
+            self.realmManager.insertProduct(name: "Soap", quantity: "1", imageName: "Product1")
+            self.realmManager.insertProduct(name: "Bread", quantity: "2", imageName: "Product2")
+            print("PRODUCTS ADDED")
+            loadTestProducts()
+        } else {
+            self.products = products
+            self.tableView.reloadData()
+        }
+    }
     
     private func registerCustomCells() {
         let nib = UINib(nibName: self.productCellIdentifier, bundle: nil)
@@ -55,7 +65,10 @@ class ProductListViewController: UIViewController {
 
 extension ProductListViewController: AddProductTableViewControllerProtocol {
     func addProduct(product: Product) {
-        /*FALTA*/
+        self.realmManager.insertProduct(name: product.name, quantity: product.quantity, imageName: product.imageName)
+        //self.products.append(product)
+        navigationController?.popViewController(animated: true)
+        self.tableView.reloadData()
     }
 }
 
@@ -92,11 +105,12 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            /*FALTA*/
-            //self.products.remove(at: indexPath.row)
-            self.tableView.beginUpdates()
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            self.tableView.endUpdates()
+            if let product = self.products?[indexPath.row] {
+                self.realmManager.deleteProduct(product: product)
+                self.tableView.beginUpdates()
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                self.tableView.endUpdates()
+            }
         }
     }
 }
