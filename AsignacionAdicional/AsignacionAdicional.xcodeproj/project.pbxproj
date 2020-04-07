@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		845CA07C2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845CA07A2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib */; };
 		845CA07F243051E300B8BB12 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA07E243051E300B8BB12 /* Animal.swift */; };
 		845CA081243051EE00B8BB12 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA080243051EE00B8BB12 /* Owner.swift */; };
+		84B85047243D2CBB00F312D7 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B85046243D2CBB00F312D7 /* RealmManager.swift */; };
+		84B8504A243D3FBD00F312D7 /* OwnerDisplayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B85049243D3FBD00F312D7 /* OwnerDisplayHeader.swift */; };
+		84B8504C243D3FCD00F312D7 /* OwnerDisplayHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B8504B243D3FCD00F312D7 /* OwnerDisplayHeader.xib */; };
+		84C78DAF243D415F00B5220D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C78DAE243D415F00B5220D /* R.generated.swift */; };
 		F97EB4C926BEFF27EB6732F1 /* Pods_AsignacionAdicional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6DECDA6B811D756667069C /* Pods_AsignacionAdicional.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		845CA07A2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDisplayTableViewCell.xib; sourceTree = "<group>"; };
 		845CA07E243051E300B8BB12 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		845CA080243051EE00B8BB12 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		84B85046243D2CBB00F312D7 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		84B85049243D3FBD00F312D7 /* OwnerDisplayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerDisplayHeader.swift; sourceTree = "<group>"; };
+		84B8504B243D3FCD00F312D7 /* OwnerDisplayHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnerDisplayHeader.xib; sourceTree = "<group>"; };
+		84C78DAE243D415F00B5220D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		B47561842B54F74C7A1CFEC8 /* Pods-AsignacionAdicional.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsignacionAdicional.debug.xcconfig"; path = "Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +71,7 @@
 		845CA0522430510B00B8BB12 = {
 			isa = PBXGroup;
 			children = (
+				84C78DAE243D415F00B5220D /* R.generated.swift */,
 				845CA05D2430510B00B8BB12 /* AsignacionAdicional */,
 				845CA05C2430510B00B8BB12 /* Products */,
 				CAA583EF4AF6225668C684C5 /* Pods */,
@@ -81,6 +90,7 @@
 		845CA05D2430510B00B8BB12 /* AsignacionAdicional */ = {
 			isa = PBXGroup;
 			children = (
+				84B85045243D2CAA00F312D7 /* Manager */,
 				845CA07D243051CB00B8BB12 /* Models */,
 				845CA0772430516000B8BB12 /* Custom Cells */,
 				845CA0722430512500B8BB12 /* Controllers */,
@@ -106,6 +116,7 @@
 		845CA0772430516000B8BB12 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				84B85048243D3F5F00F312D7 /* Owner Dislay Header */,
 				845CA0782430516F00B8BB12 /* Animal Display Cell */,
 			);
 			path = "Custom Cells";
@@ -129,13 +140,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		84B85045243D2CAA00F312D7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84B85046243D2CBB00F312D7 /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		84B85048243D3F5F00F312D7 /* Owner Dislay Header */ = {
+			isa = PBXGroup;
+			children = (
+				84B85049243D3FBD00F312D7 /* OwnerDisplayHeader.swift */,
+				84B8504B243D3FCD00F312D7 /* OwnerDisplayHeader.xib */,
+			);
+			path = "Owner Dislay Header";
+			sourceTree = "<group>";
+		};
 		CAA583EF4AF6225668C684C5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B47561842B54F74C7A1CFEC8 /* Pods-AsignacionAdicional.debug.xcconfig */,
 				2ACB46A7DB5D6AA9AA2AC90A /* Pods-AsignacionAdicional.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +174,7 @@
 			buildConfigurationList = 845CA06F2430510C00B8BB12 /* Build configuration list for PBXNativeTarget "AsignacionAdicional" */;
 			buildPhases = (
 				2A6756511A04DD4A5F10DB1F /* [CP] Check Pods Manifest.lock */,
+				84C78DAD243D40E700B5220D /* ShellScript */,
 				845CA0572430510B00B8BB12 /* Sources */,
 				845CA0582430510B00B8BB12 /* Frameworks */,
 				845CA0592430510B00B8BB12 /* Resources */,
@@ -203,6 +231,7 @@
 				845CA0682430510C00B8BB12 /* Assets.xcassets in Resources */,
 				845CA07C2430519B00B8BB12 /* AnimalDisplayTableViewCell.xib in Resources */,
 				845CA0662430510B00B8BB12 /* Main.storyboard in Resources */,
+				84B8504C243D3FCD00F312D7 /* OwnerDisplayHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +277,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AsignacionAdicional/Pods-AsignacionAdicional-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		84C78DAD243D40E700B5220D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -256,10 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				845CA07B2430519B00B8BB12 /* AnimalDisplayTableViewCell.swift in Sources */,
+				84B85047243D2CBB00F312D7 /* RealmManager.swift in Sources */,
 				845CA05F2430510B00B8BB12 /* AppDelegate.swift in Sources */,
 				845CA081243051EE00B8BB12 /* Owner.swift in Sources */,
 				845CA0742430513E00B8BB12 /* AnimalListViewController.swift in Sources */,
+				84B8504A243D3FBD00F312D7 /* OwnerDisplayHeader.swift in Sources */,
 				845CA0762430515A00B8BB12 /* AddAnimalTableViewController.swift in Sources */,
+				84C78DAF243D415F00B5220D /* R.generated.swift in Sources */,
 				845CA0612430510B00B8BB12 /* SceneDelegate.swift in Sources */,
 				845CA07F243051E300B8BB12 /* Animal.swift in Sources */,
 			);

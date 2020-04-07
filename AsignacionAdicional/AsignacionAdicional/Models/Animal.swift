@@ -11,15 +11,14 @@ import RealmSwift
 
 class Animal: Object {
     
-    @objc dynamic var date = Date()
-    @objc dynamic var title = ""
-    @objc dynamic var descriptionNews = ""
+    @objc dynamic var animalType = ""
+    @objc dynamic var imageName = ""
     
     let owners = LinkingObjects(fromType: Owner.self, property: "animals")
     
-    convenience init(title: String, descriptionNews: String) {
+    convenience init(animalType: String, imageName: String) {
         self.init()
-        self.title = title
-        self.descriptionNews = descriptionNews
+        self.animalType = animalType
+        self.imageName = imageName
     }
 }
