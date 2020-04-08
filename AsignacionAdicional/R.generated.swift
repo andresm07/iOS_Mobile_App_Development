@@ -174,8 +174,8 @@ struct R: Rswift.Validatable {
       return R.nib.animalDisplayTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AnimalDisplayTableViewCell
     }
 
-    static func ownerDisplayHeader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.ownerDisplayHeader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func ownerDisplayHeader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> OwnerDisplayHeader? {
+      return R.nib.ownerDisplayHeader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? OwnerDisplayHeader
     }
 
     fileprivate init() {}
@@ -218,8 +218,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "OwnerDisplayHeader"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> OwnerDisplayHeader? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? OwnerDisplayHeader
       }
 
       fileprivate init() {}

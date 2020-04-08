@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol AddAnimalTableViewControllerProtocol: class {
-    func addAnimal(animal: Animal)
+    func addAnimal(animal: Animal, owner: Owner)
 }
 
 class AddAnimalTableViewController: UITableViewController{
@@ -23,6 +24,7 @@ class AddAnimalTableViewController: UITableViewController{
     @IBOutlet weak var ownerProvinceDropDown: UITextField!
     
     var animal: Animal?
+    var owner: Owner?
     var selectedAnimalType: String?
     var animalTypeList = ["Dog", "Cat"]
     var selectedProvince: String?
@@ -35,14 +37,14 @@ class AddAnimalTableViewController: UITableViewController{
         dismissAnimalTypePickerView()
 
         // Do any additional setup after loading the view.
-        if let animal = self.animal {
-            //self.animalTypePicker.text = animal.animalType
+        if let animal = self.animal, let owner = self.owner {
+            self.animalTypeDropDown.text = animal.animalType
             self.animalTypeDropDown.isUserInteractionEnabled = false
-            //self.ownerNameTextField.text = animal.owners
+            self.ownerNameTextField.text = owner.name
             self.ownerNameTextField.isUserInteractionEnabled = false
-            //self.ownerPhoneNumberTextField.text = animal.owners
+            self.ownerPhoneNumberTextField.text = owner.phoneNumber
             self.ownerPhoneNumberTextField.isUserInteractionEnabled = false
-            //self.ownerProvincePicker.text = animal.owners
+            self.ownerProvinceDropDown.text = owner.province
             self.ownerProvinceDropDown.isUserInteractionEnabled = false
         } else {
             saveAnimalNavigationButton()
@@ -55,7 +57,18 @@ class AddAnimalTableViewController: UITableViewController{
     }
     
     @objc func saveAnimalAction(sender: UIBarButtonItem) {
-        if let ownerName = self.ownerNameTextField.text, ownerName.count > 0 {
+        if let ownerName = self.ownerNameTextField.text, ownerName.count > 0, self.animalTypeDropDown.text!.count > 0, self.ownerPhoneNumberTextField.text!.count > 0, self.ownerProvinceDropDown.text!.count > 0 {
+            
+            let realmManager = RealmManager()
+            let owner = Owner(name: ownerName, province: self.ownerProvinceDropDown.text!, phoneNumber: self.ownerPhoneNumberTextField.text!)
+            let animal = Animal(animalType: self.animalTypeDropDown.text!, imageName: self.animalTypeDropDown.text!)
+            if realmManager.findOwner(owner: owner) {
+                owner.animals.append(animal)
+            } else {
+                realmManager.insertOwner(name: ownerName, province: self.ownerProvinceDropDown.text!, phoneNumber: self.ownerProvinceDropDown.text!)
+                let newOwner = Owner(name: ownerName, province: self.ownerProvinceDropDown.text!, phoneNumber: self.ownerProvinceDropDown.text!)
+                realmManager.addAnimalToOwner(animal: animal, owner: newOwner)
+            }
             
         } else {
             let alertController = UIAlertController(title: "Error", message: "Debe llenar los datos", preferredStyle: .alert)

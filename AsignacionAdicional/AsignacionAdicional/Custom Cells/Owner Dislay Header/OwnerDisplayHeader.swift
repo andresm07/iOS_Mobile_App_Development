@@ -9,13 +9,13 @@
 import UIKit
 
 class OwnerDisplayHeader: UITableViewHeaderFooterView {
+    
+    
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var ownerProvinceLabel: UILabel!
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    public func setupCell(owner: Owner) {
+        self.ownerNameLabel.text = owner.name
+        self.ownerProvinceLabel.text = owner.province
     }
-    */
-
 }

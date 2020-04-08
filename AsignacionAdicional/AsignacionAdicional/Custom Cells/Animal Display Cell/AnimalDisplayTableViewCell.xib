@@ -25,20 +25,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FGq-Pg-1T1">
                                 <rect key="frame" x="160" y="0.0" width="160" height="230"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSz-ir-m8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="76.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgJ-uF-IXo">
-                                        <rect key="frame" x="0.0" y="76.5" width="160" height="77"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPH-dC-OUp">
-                                        <rect key="frame" x="0.0" y="153.5" width="160" height="76.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="HPH-dC-OUp">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="230"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -58,9 +46,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="animalImageView" destination="3Ub-99-esg" id="NxR-3w-eEX"/>
-                <outlet property="ownerNameLabel" destination="DSz-ir-m8B" id="cAZ-n3-ub7"/>
                 <outlet property="phoneNumberLabel" destination="HPH-dC-OUp" id="H1Y-g5-nnG"/>
-                <outlet property="provinceLabel" destination="xgJ-uF-IXo" id="Y5Z-w6-pxM"/>
             </connections>
             <point key="canvasLocation" x="133" y="113"/>
         </tableViewCell>
