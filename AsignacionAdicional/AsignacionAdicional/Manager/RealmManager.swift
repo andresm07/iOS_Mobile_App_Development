@@ -59,8 +59,8 @@ class RealmManager {
         var found = false
         do {
             let realm = try Realm()
-            let lookedUpOwner = realm.objects(Owner.self).filter("name = \(owner.name)")
-            if lookedUpOwner.count > 1 {
+            let lookedUpOwner = realm.objects(Owner.self).filter("name = %@", owner.name)
+            if !lookedUpOwner.isEmpty {
                 found = true
             }
         } catch {

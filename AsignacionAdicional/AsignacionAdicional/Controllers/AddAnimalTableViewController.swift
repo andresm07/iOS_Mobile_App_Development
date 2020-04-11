@@ -30,11 +30,14 @@ class AddAnimalTableViewController: UITableViewController{
     var selectedProvince: String?
     var provinceList = ["Heredia", "Cartago", "Alajuela", "Limon", "Puntarenas", "Guanacaste", "San Jose"]
     
+    var animalTypePickerView = UIPickerView()
+    var provincePickerView = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createAnimalTypePickerView()
-        dismissAnimalTypePickerView()
+        initializePickerViews()
+        dismissPickerViews()
 
         // Do any additional setup after loading the view.
         if let animal = self.animal, let owner = self.owner {
@@ -87,31 +90,47 @@ extension AddAnimalTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return animalTypeList.count
+        if pickerView == self.animalTypePickerView {
+            return self.animalTypeList.count
+        }
+        else {
+            return self.provinceList.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return animalTypeList[row]
+        if pickerView == self.animalTypePickerView {
+            return self.animalTypeList[row]
+        } else {
+            return self.provinceList[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedAnimalType = animalTypeList[row]
-        animalTypeDropDown.text = selectedAnimalType
+        if pickerView == self.animalTypePickerView {
+            self.selectedAnimalType = self.animalTypeList[row]
+            self.animalTypeDropDown.text = self.selectedAnimalType
+        } else {
+            self.selectedProvince = self.provinceList[row]
+            self.ownerProvinceDropDown.text = self.selectedProvince
+        }
     }
     
-    func createAnimalTypePickerView() {
-        let animalTypePickerView = UIPickerView()
-        animalTypePickerView.delegate = self
-        animalTypeDropDown.inputView = animalTypePickerView
+    func initializePickerViews() {
+        self.animalTypePickerView.delegate = self
+        self.animalTypeDropDown.inputView = self.animalTypePickerView
+        self.provincePickerView.delegate = self
+        self.ownerProvinceDropDown.inputView = self.provincePickerView
     }
     
-    func dismissAnimalTypePickerView() {
+    func dismissPickerViews() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action))
         toolbar.setItems([button], animated: true)
         toolbar.isUserInteractionEnabled = true
-        animalTypeDropDown.inputAccessoryView = toolbar
+        self.animalTypeDropDown.inputAccessoryView = toolbar
+        self.ownerProvinceDropDown.inputAccessoryView = toolbar
     }
     
     @objc func action() {
