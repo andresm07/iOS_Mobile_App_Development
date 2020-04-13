@@ -13,7 +13,7 @@ class AnimalListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var owners: Results<Owner>?
+    var animals: Results<Animal>?
     
     let animalCellIdentifier = "AnimalDisplayTableViewCell"
     let realmManager = RealmManager()
@@ -28,25 +28,26 @@ class AnimalListViewController: UIViewController {
         
         registerCustomCells()
         addAnimalNavigationButton()
-        createOwners()
+        createData()
     }
     
-    private func createOwners() {
-        let owners = self.realmManager.getAllOwners()
-        if let owners = owners, owners.isEmpty {
-            self.realmManager.insertOwner(name: "Andres Miranda", province: "Heredia", phoneNumber: "87078389")
-            self.realmManager.insertOwner(name: "Mazel Abarca", province: "Cartago", phoneNumber: "60454870")
-            print("OWNERS ADDED")
-            createOwners()
+    private func createData() {
+        let animals = self.realmManager.getAllAnimals()
+        if let animals = animals, animals.isEmpty {
+            self.realmManager.insertAnimal(animalType: "Dog", imageName: "Dog", name: "Andres Miranda", province: "Heredia", phoneNumber: "87078389")
+            self.realmManager.insertAnimal(animalType: "Cat", imageName: "Cat", name: "Andres Miranda", province: "Cartago", phoneNumber: "87078389")
+            self.realmManager.insertAnimal(animalType: "Dog", imageName: "Dog", name: "Juan Perez", province: "Limon", phoneNumber: "88888888")
+            print("ANIMALS ADDED")
+            createData()
         } else {
-            self.owners = owners
+            self.animals = animals
             self.tableView.reloadData()
         }
     }
     
     private func registerCustomCells() {
         self.tableView.register(UINib(resource: R.nib.animalDisplayTableViewCell), forCellReuseIdentifier: R.nib.animalDisplayTableViewCell.name)
-        self.tableView.register(UINib(resource: R.nib.ownerDisplayHeader), forHeaderFooterViewReuseIdentifier: R.nib.ownerDisplayHeader.name)
+        //self.tableView.register(UINib(resource: R.nib.ownerDisplayHeader), forHeaderFooterViewReuseIdentifier: R.nib.ownerDisplayHeader.name)
     }
     
     func addAnimalNavigationButton() {
@@ -64,40 +65,25 @@ class AnimalListViewController: UIViewController {
 }
 
 extension AnimalListViewController: AddAnimalTableViewControllerProtocol {
-    func addAnimal(animal: Animal, owner: Owner) {
-        self.realmManager.addAnimalToOwner(animal: animal, owner: owner)
+    func addAnimal(animal: Animal) {
+        self.realmManager.insertAnimal(animalType: animal.animalType, imageName: animal.imageName, name: animal.name, province: animal.province, phoneNumber: animal.phoneNumber)
         navigationController?.popViewController(animated: true)
         self.tableView.reloadData()
     }
 }
 
 extension AnimalListViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.owners?.count ?? 0
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.animals?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.owners?[section].animals.count ?? 0
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: self.animalCellIdentifier) as? AnimalDisplayTableViewCell else
         {
             return UITableViewCell()
         }
-        cell.setupCell(owner: (self.owners?[indexPath.section])!, animal: (self.owners?[indexPath.section].animals[indexPath.row])!)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let cell = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: R.nib.ownerDisplayHeader.name) as? OwnerDisplayHeader else {
-            return UIView()
-        }
-        cell.setupCell(owner: (self.owners?[section])!)
+        cell.setupCell(animal: (self.animals?[indexPath.row])!)
         return cell
     }
     
@@ -107,7 +93,7 @@ extension AnimalListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let addAnimalTableViewController = storyboard?.instantiateViewController(identifier: "AddAnimalTableViewController") as? AddAnimalTableViewController {
-            //addAnimalTableViewController.news = self.category?.news[indexPath.row]
+            addAnimalTableViewController.animal = self.animals?[indexPath.row]
             navigationController?.pushViewController(addAnimalTableViewController, animated: true)
         }
     }
@@ -118,7 +104,7 @@ extension AnimalListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if let animal = owners?[indexPath.section].animals[indexPath.row] {
+            if let animal = self.animals?[indexPath.row] {
                 self.realmManager.deleteAnimal(animal: animal)
                 self.tableView.beginUpdates()
                 self.tableView.deleteRows(at: [indexPath], with: .fade)

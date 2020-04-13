@@ -11,7 +11,9 @@ import UIKit
 class AnimalDisplayTableViewCell: UITableViewCell {
 
     @IBOutlet weak var animalImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var provinceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +26,10 @@ class AnimalDisplayTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func setupCell(owner: Owner, animal: Animal) {
+    public func setupCell(animal: Animal) {
         self.animalImageView.image = UIImage(named: animal.imageName)
-        self.phoneNumberLabel.text = owner.phoneNumber
+        self.nameLabel.text = animal.name
+        self.phoneNumberLabel.text = animal.phoneNumber
+        self.provinceLabel.text = animal.province
     }
 }
