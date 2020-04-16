@@ -10,6 +10,8 @@ import UIKit
 
 class BudgetTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var budgetNameLabel: UILabel!
+    @IBOutlet weak var budgetAmountLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +21,11 @@ class BudgetTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func setupCell(budget: Budget) {
+        self.budgetNameLabel.text = budget.name
+        self.budgetAmountLabel.text = String(budget.amount)
     }
     
 }

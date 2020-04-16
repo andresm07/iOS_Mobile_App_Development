@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Person {
-    var name: String
-    var username: String
-    var password: String
+class Person: Object {
     
-    init(name: String, username: String, password: String) {
+    @objc dynamic var name = ""
+    @objc dynamic var username = ""
+    @objc dynamic var password = ""
+    
+    convenience init(name: String, username: String, password: String) {
+        self.init()
         self.name = name
         self.username = username
         self.password = password

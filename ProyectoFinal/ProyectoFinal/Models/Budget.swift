@@ -7,25 +7,35 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Budget {
-    var name: String
-    var periodicity: Periodicity
-    var initialDate = Date()
-    var initialAmount: Float
-    var rollover: Bool
+class Budget: Object {
     
-    init(name: String, periodicity: Periodicity, initialAmount: Float) {
+    @objc dynamic var identifier = NSUUID().uuidString
+    @objc dynamic var name = ""
+    @objc dynamic var periodicity = ""
+    @objc dynamic var initialDate = Date()
+    @objc dynamic var initialAmount: Float = 0.0
+    @objc dynamic var amount: Float = 0.0
+    @objc dynamic var rollover = false
+    
+    let transactions = List<Transaction>()
+    
+    convenience init(name: String, periodicity: String, initialAmount: Float) {
+        self.init()
         self.name = name
         self.periodicity = periodicity
         self.initialAmount = initialAmount
+        self.amount = initialAmount
         self.rollover = true
     }
     
     
-    enum Periodicity {
-        case weekly
-        case quarterly
-        case monthly
+    override static func primaryKey() -> String? {
+        return "identifier"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["identifier"]
     }
 }

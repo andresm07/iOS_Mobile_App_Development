@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		36EEFFE9A7541CEF867703C7 /* Pods_ProyectoFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6819548226440991076D679C /* Pods_ProyectoFinal.framework */; };
-		8436E1D02448061300F1CE83 /* BudgetListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1CF2448061300F1CE83 /* BudgetListTableViewController.swift */; };
-		8436E1D22448074A00F1CE83 /* HistoryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1D12448074A00F1CE83 /* HistoryListTableViewController.swift */; };
 		8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1D32448077000F1CE83 /* ConfigurationViewController.swift */; };
 		8436E1D6244807A000F1CE83 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1D5244807A000F1CE83 /* LoginViewController.swift */; };
 		8436E1DC244808FD00F1CE83 /* AddBudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1DB244808FD00F1CE83 /* AddBudgetTableViewController.swift */; };
@@ -27,6 +25,10 @@
 		8436E1F924480E6500F1CE83 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F824480E6500F1CE83 /* Transaction.swift */; };
 		8436E1FB24480E9800F1CE83 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FA24480E9800F1CE83 /* Person.swift */; };
 		8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */; };
+		8436E1FF24481A3700F1CE83 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FE24481A3700F1CE83 /* BudgetListViewController.swift */; };
+		8436E20124481A4700F1CE83 /* HistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E20024481A4700F1CE83 /* HistoryListViewController.swift */; };
+		8436E2042448227500F1CE83 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E2032448227500F1CE83 /* R.generated.swift */; };
+		8436E207244822F600F1CE83 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E206244822F600F1CE83 /* RealmManager.swift */; };
 		84784C532447A39B0032D5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84784C522447A39B0032D5E2 /* AppDelegate.swift */; };
 		84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84784C542447A39B0032D5E2 /* SceneDelegate.swift */; };
 		84784C5A2447A39B0032D5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C582447A39B0032D5E2 /* Main.storyboard */; };
@@ -37,8 +39,6 @@
 /* Begin PBXFileReference section */
 		62605AE9F4CD2943349F725D /* Pods-ProyectoFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinal.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFinal/Pods-ProyectoFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		6819548226440991076D679C /* Pods_ProyectoFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8436E1CF2448061300F1CE83 /* BudgetListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListTableViewController.swift; sourceTree = "<group>"; };
-		8436E1D12448074A00F1CE83 /* HistoryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListTableViewController.swift; sourceTree = "<group>"; };
 		8436E1D32448077000F1CE83 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		8436E1D5244807A000F1CE83 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8436E1DB244808FD00F1CE83 /* AddBudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetTableViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +56,10 @@
 		8436E1F824480E6500F1CE83 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		8436E1FA24480E9800F1CE83 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8436E1FE24481A3700F1CE83 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
+		8436E20024481A4700F1CE83 /* HistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListViewController.swift; sourceTree = "<group>"; };
+		8436E2032448227500F1CE83 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		8436E206244822F600F1CE83 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		84784C4F2447A39B0032D5E2 /* ProyectoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84784C522447A39B0032D5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84784C542447A39B0032D5E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +85,6 @@
 		8436E1CE244805C300F1CE83 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8436E1CF2448061300F1CE83 /* BudgetListTableViewController.swift */,
-				8436E1D12448074A00F1CE83 /* HistoryListTableViewController.swift */,
 				8436E1D32448077000F1CE83 /* ConfigurationViewController.swift */,
 				8436E1D5244807A000F1CE83 /* LoginViewController.swift */,
 				8436E1DB244808FD00F1CE83 /* AddBudgetTableViewController.swift */,
@@ -90,6 +92,8 @@
 				8436E1E124480A1300F1CE83 /* AddExpensesTableViewController.swift */,
 				8436E1F424480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift */,
 				8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */,
+				8436E1FE24481A3700F1CE83 /* BudgetListViewController.swift */,
+				8436E20024481A4700F1CE83 /* HistoryListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,9 +162,18 @@
 			path = TransactionTableViewCell;
 			sourceTree = "<group>";
 		};
+		8436E205244822E900F1CE83 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8436E206244822F600F1CE83 /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		84784C462447A39B0032D5E2 = {
 			isa = PBXGroup;
 			children = (
+				8436E2032448227500F1CE83 /* R.generated.swift */,
 				84784C512447A39B0032D5E2 /* ProyectoFinal */,
 				84784C502447A39B0032D5E2 /* Products */,
 				8CBA1D282B0BD0DD8D8B46DF /* Pods */,
@@ -179,6 +192,7 @@
 		84784C512447A39B0032D5E2 /* ProyectoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				8436E205244822E900F1CE83 /* Manager */,
 				8436E1DA244807DA00F1CE83 /* Storyboards */,
 				8436E1D9244807CF00F1CE83 /* Extensions */,
 				8436E1D8244807CB00F1CE83 /* Models */,
@@ -217,6 +231,7 @@
 			buildConfigurationList = 84784C632447A39D0032D5E2 /* Build configuration list for PBXNativeTarget "ProyectoFinal" */;
 			buildPhases = (
 				0600E69D09FC965C7CFDB460 /* [CP] Check Pods Manifest.lock */,
+				8436E202244821D300F1CE83 /* ShellScript */,
 				84784C4B2447A39B0032D5E2 /* Sources */,
 				84784C4C2447A39B0032D5E2 /* Frameworks */,
 				84784C4D2447A39B0032D5E2 /* Resources */,
@@ -303,6 +318,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8436E202244821D300F1CE83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		F9794F35995563020BA83F78 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,18 +367,20 @@
 				8436E1F724480D8100F1CE83 /* Budget.swift in Sources */,
 				8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */,
 				8436E1D6244807A000F1CE83 /* LoginViewController.swift in Sources */,
-				8436E1D22448074A00F1CE83 /* HistoryListTableViewController.swift in Sources */,
+				8436E2042448227500F1CE83 /* R.generated.swift in Sources */,
 				8436E1E224480A1300F1CE83 /* AddExpensesTableViewController.swift in Sources */,
 				8436E1EE24480AF600F1CE83 /* Date+Formatter.swift in Sources */,
-				8436E1D02448061300F1CE83 /* BudgetListTableViewController.swift in Sources */,
 				8436E1F224480B5700F1CE83 /* TransactionTableViewCell.swift in Sources */,
 				84784C532447A39B0032D5E2 /* AppDelegate.swift in Sources */,
 				8436E1DC244808FD00F1CE83 /* AddBudgetTableViewController.swift in Sources */,
 				8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */,
 				8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */,
 				8436E1FB24480E9800F1CE83 /* Person.swift in Sources */,
+				8436E1FF24481A3700F1CE83 /* BudgetListViewController.swift in Sources */,
 				84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */,
+				8436E207244822F600F1CE83 /* RealmManager.swift in Sources */,
 				8436E1E0244809FC00F1CE83 /* AddMoneyTableViewController.swift in Sources */,
+				8436E20124481A4700F1CE83 /* HistoryListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

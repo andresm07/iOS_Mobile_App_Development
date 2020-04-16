@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Transaction {
-    var detail: String
-    var amount: Float
-    var date = Date()
+class Transaction: Object {
     
-    init(detail: String, amount: Float) {
+    @objc dynamic var detail = ""
+    @objc dynamic var amount: Float = 0.0
+    @objc dynamic var date = Date()
+    
+    let budgets = LinkingObjects(fromType: Budget.self, property: "transactions")
+    
+    convenience init(detail: String, amount: Float) {
+        self.init()
         self.detail = detail
         self.amount = amount
     }
