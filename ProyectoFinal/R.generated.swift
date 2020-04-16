@@ -151,8 +151,8 @@ struct R: Rswift.Validatable {
       return R.nib.budgetTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BudgetTableViewCell
     }
 
-    static func budgetTableViewHeader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.budgetTableViewHeader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func budgetTableViewHeader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BudgetTableViewHeader? {
+      return R.nib.budgetTableViewHeader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BudgetTableViewHeader
     }
 
     static func transactionTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionTableViewCell? {
@@ -199,8 +199,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "BudgetTableViewHeader"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BudgetTableViewHeader? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BudgetTableViewHeader
       }
 
       fileprivate init() {}
@@ -301,6 +301,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "gear", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gear' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "pencil", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pencil' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "tray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tray' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().addBudgetTableViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addBudgetTableViewController' could not be loaded from storyboard 'Main' as 'AddBudgetTableViewController'.") }

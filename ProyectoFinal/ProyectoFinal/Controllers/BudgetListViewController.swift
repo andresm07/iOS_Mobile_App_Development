@@ -31,8 +31,7 @@ class BudgetListViewController: UIViewController {
     }
     
     private func registerCustomCells() {
-        let nib = UINib(nibName: self.budgetTableViewCellIdentifier, bundle: nil)
-        self.budgetListTableView.register(nib, forCellReuseIdentifier: self.budgetTableViewCellIdentifier)
+        self.budgetListTableView.register(UINib(resource: R.nib.budgetTableViewCell), forCellReuseIdentifier: R.nib.budgetTableViewCell.name)
     }
     
     private func addBudgetNavitationButton() {
@@ -42,17 +41,16 @@ class BudgetListViewController: UIViewController {
     
     @objc func addBudgetAction(sender: UIBarButtonItem) {
         if let addBudgetTableViewController = storyboard?.instantiateViewController(identifier: "AddBudgetTableViewController") as? AddBudgetTableViewController {
-            //addNewsViewController.delegate = self
+            addBudgetTableViewController.delegate = self
             navigationController?.pushViewController(addBudgetTableViewController, animated: true)
         }
     }
     
     private func getBudgets() {
-        let realmManager = RealmManager()
-        let budgets = realmManager.getAllBudgets()
+        let budgets = self.realmManager.getAllBudgets()
         if let budgets = budgets, budgets.isEmpty {
-            self.realmManager.insertBudget(name: "Peru", periodicity: "Monthly", initialAmount: 0.0)
-            self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0)
+            self.realmManager.insertBudget(name: "Peru", periodicity: "Monthly", initialAmount: 0.0, rollover: true)
+            self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0, rollover: false)
             getBudgets()
         } else {
             self.budgets = budgets
@@ -60,6 +58,14 @@ class BudgetListViewController: UIViewController {
         }
     }
 
+}
+
+extension BudgetListViewController: AddBudgetTableViewControllerProtocol {
+    func addBudget(budget: Budget) {
+        self.realmManager.insertBudget(name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
+        navigationController?.popViewController(animated: true)
+        self.budgetListTableView.reloadData()
+    }
 }
 
 extension BudgetListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -73,12 +79,37 @@ extension BudgetListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.setupCell(budget: (self.budgets?[indexPath.row])!)
         if (self.budgets?[indexPath.row].amount)! <= 0.0 {
-            cell.backgroundColor = UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 0.0)
+            cell.backgroundColor = UIColor(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 1.0)
         } else {
-            cell.backgroundColor = UIColor(red: 153.0, green: 204.0, blue: 255.0, alpha: 0.0)
+            cell.backgroundColor = UIColor(red: (153.0/255.0), green: (204.0/255.0), blue: (255.0/255.0), alpha: 1.0)
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let addBudgetTableViewController = storyboard?.instantiateViewController(identifier: "AddBudgetTableViewController") as? AddBudgetTableViewController {
+            addBudgetTableViewController.budget = self.budgets?[indexPath.row]
+            navigationController?.pushViewController(addBudgetTableViewController, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let budget = self.budgets?[indexPath.row] {
+                self.realmManager.deleteBudget(budget: budget)
+                self.budgetListTableView.beginUpdates()
+                self.budgetListTableView.deleteRows(at: [indexPath], with: .fade)
+                self.budgetListTableView.endUpdates()
+            }
+        } 
+    }
     
 }

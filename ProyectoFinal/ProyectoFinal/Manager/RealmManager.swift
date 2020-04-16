@@ -11,8 +11,8 @@ import RealmSwift
 
 class RealmManager {
     
-    public func insertBudget(name: String, periodicity: String, initialAmount: Float) {
-        let budget = Budget(name: name, periodicity: periodicity, initialAmount: initialAmount)
+    public func insertBudget(name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
+        let budget = Budget(name: name, periodicity: periodicity, initialAmount: initialAmount, rollover: rollover)
         do {
             let realm = try Realm()
             try realm.write {

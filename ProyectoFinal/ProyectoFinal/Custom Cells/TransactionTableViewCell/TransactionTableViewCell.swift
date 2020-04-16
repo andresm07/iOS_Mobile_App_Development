@@ -9,7 +9,11 @@
 import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var transactionDetailsLabel: UILabel!
+    @IBOutlet weak var transactionAmountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,11 @@ class TransactionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func setupCell(transaction: Transaction) {
+        self.transactionDetailsLabel.text = transaction.detail
+        self.transactionAmountLabel.text = String(transaction.amount)
     }
     
 }

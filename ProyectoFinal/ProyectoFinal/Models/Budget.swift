@@ -21,13 +21,13 @@ class Budget: Object {
     
     let transactions = List<Transaction>()
     
-    convenience init(name: String, periodicity: String, initialAmount: Float) {
+    convenience init(name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
         self.init()
         self.name = name
         self.periodicity = periodicity
         self.initialAmount = initialAmount
         self.amount = initialAmount
-        self.rollover = true
+        self.rollover = rollover
     }
     
     

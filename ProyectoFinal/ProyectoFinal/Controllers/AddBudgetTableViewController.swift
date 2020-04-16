@@ -8,83 +8,129 @@
 
 import UIKit
 
+protocol AddBudgetTableViewControllerProtocol: class {
+    func addBudget(budget: Budget)
+}
+
 class AddBudgetTableViewController: UITableViewController {
 
+    
+    @IBOutlet weak var budgetNameTextField: UITextField!
+    @IBOutlet weak var budgetPeriodicityPickerTextField: UITextField!
+    @IBOutlet weak var startDatePickerTextField: UITextField!
+    @IBOutlet weak var initialAmoutTextField: UITextField!
+    @IBOutlet weak var rolloverSwitch: UISwitch!
+    
+    weak var delegate: AddBudgetTableViewControllerProtocol?
+    
+    var budget: Budget?
+    let periodicityPickerView = UIPickerView()
+    let periodicityOptions = ["Weekly", "Quarterly", "Monthly"]
+    var selectedPeriodicity: String?
+    let datePickerView = UIDatePicker()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        initializePickerViews()
+        dismissPickerViews()
+        showDatePicker()
+        
+        if let budget = self.budget {
+            self.budgetNameTextField.text = budget.name
+            self.budgetNameTextField.isUserInteractionEnabled = false
+            self.budgetPeriodicityPickerTextField.text = budget.periodicity
+            self.budgetPeriodicityPickerTextField.isUserInteractionEnabled = false
+            self.startDatePickerTextField.text = budget.initialDate.toString(dateFormat: "dd/MM/yyyy")
+            self.startDatePickerTextField.isUserInteractionEnabled = false
+            self.initialAmoutTextField.text = String(budget.amount)
+            self.initialAmoutTextField.isUserInteractionEnabled = false
+            self.rolloverSwitch.setOn(budget.rollover, animated: true)
+            self.rolloverSwitch.isUserInteractionEnabled = false
+        } else {
+            saveBudgetNavitagionButton()
+        }
+    }
+    
+    private func saveBudgetNavitagionButton() {
+        let saveBudgetNavigationButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveBudgetAction(sender:)))
+        navigationItem.rightBarButtonItem = saveBudgetNavigationButton
+    }
+    
+    @objc func saveBudgetAction(sender: UIBarButtonItem) {
+        if let budgetName = self.budgetNameTextField.text, budgetName.count > 0 {
+            let budget = Budget(name: budgetName, periodicity: self.budgetPeriodicityPickerTextField.text!, initialAmount: self.initialAmoutTextField.text!.floatValue, rollover: self.rolloverSwitch.isOn)
+            self.delegate?.addBudget(budget: budget)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "Fill out data", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    private func showDatePicker() {
+        self.datePickerView.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([doneButton, spaceButton, cancelButton], animated: false)
+        self.startDatePickerTextField.inputAccessoryView = toolbar
+        self.startDatePickerTextField.inputView = self.datePickerView
+        
+    }
+    
+    @objc func doneDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        self.startDatePickerTextField.text = formatter.string(from: self.datePickerView.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker() {
+        self.view.endEditing(true)
     }
 
-    // MARK: - Table view data source
+}
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+extension AddBudgetTableViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.periodicityOptions.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.periodicityOptions[row]
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.selectedPeriodicity = self.periodicityOptions[row]
+        self.budgetPeriodicityPickerTextField.text = self.selectedPeriodicity
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func initializePickerViews() {
+        self.periodicityPickerView.delegate = self
+        self.budgetPeriodicityPickerTextField.inputView = self.periodicityPickerView
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func dismissPickerViews() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action))
+        toolbar.setItems([button], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        self.budgetPeriodicityPickerTextField.inputAccessoryView = toolbar
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    @objc func action() {
+        view.endEditing(true)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

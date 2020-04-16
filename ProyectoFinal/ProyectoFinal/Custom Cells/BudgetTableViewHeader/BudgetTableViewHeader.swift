@@ -10,12 +10,12 @@ import UIKit
 
 class BudgetTableViewHeader: UITableViewHeaderFooterView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBOutlet weak var budgetNameLabel: UILabel!
+    @IBOutlet weak var budgetAmountLabel: UILabel!
+    
+    public func setupCell(budget: Budget) {
+        self.budgetNameLabel.text = budget.name
+        self.budgetAmountLabel.text = String(budget.amount)
     }
-    */
-
 }

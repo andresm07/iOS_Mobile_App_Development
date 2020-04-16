@@ -16,7 +16,6 @@
 		8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1E424480AA000F1CE83 /* BudgetTableViewCell.swift */; };
 		8436E1E724480AA000F1CE83 /* BudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436E1E524480AA000F1CE83 /* BudgetTableViewCell.xib */; };
 		8436E1EA24480AC200F1CE83 /* BudgetTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1E924480AC200F1CE83 /* BudgetTableViewHeader.swift */; };
-		8436E1EC24480AE000F1CE83 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436E1EB24480AE000F1CE83 /* BudgetTableViewHeader.xib */; };
 		8436E1EE24480AF600F1CE83 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */; };
 		8436E1F224480B5700F1CE83 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F024480B5700F1CE83 /* TransactionTableViewCell.swift */; };
 		8436E1F324480B5700F1CE83 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436E1F124480B5700F1CE83 /* TransactionTableViewCell.xib */; };
@@ -34,6 +33,9 @@
 		84784C5A2447A39B0032D5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C582447A39B0032D5E2 /* Main.storyboard */; };
 		84784C5C2447A39D0032D5E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84784C5B2447A39D0032D5E2 /* Assets.xcassets */; };
 		84784C5F2447A39D0032D5E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C5D2447A39D0032D5E2 /* LaunchScreen.storyboard */; };
+		848FE83D2449110A00522AF3 /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83C2449110A00522AF3 /* Date+ToString.swift */; };
+		848FE83F2449112E00522AF3 /* String+FloatValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83E2449112E00522AF3 /* String+FloatValue.swift */; };
+		848FE8412449195000522AF3 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,6 @@
 		8436E1E424480AA000F1CE83 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		8436E1E524480AA000F1CE83 /* BudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewCell.xib; sourceTree = "<group>"; };
 		8436E1E924480AC200F1CE83 /* BudgetTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewHeader.swift; sourceTree = "<group>"; };
-		8436E1EB24480AE000F1CE83 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
 		8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		8436E1F024480B5700F1CE83 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		8436E1F124480B5700F1CE83 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
@@ -67,6 +68,9 @@
 		84784C5B2447A39D0032D5E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84784C5E2447A39D0032D5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84784C602447A39D0032D5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848FE83C2449110A00522AF3 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
+		848FE83E2449112E00522AF3 /* String+FloatValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FloatValue.swift"; sourceTree = "<group>"; };
+		848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
 		D55B41C6FD772708081A90F0 /* Pods-ProyectoFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinal.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFinal/Pods-ProyectoFinal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */,
+				848FE83C2449110A00522AF3 /* Date+ToString.swift */,
+				848FE83E2449112E00522AF3 /* String+FloatValue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				8436E1E924480AC200F1CE83 /* BudgetTableViewHeader.swift */,
-				8436E1EB24480AE000F1CE83 /* BudgetTableViewHeader.xib */,
+				848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */,
 			);
 			path = BudgetTableViewHeader;
 			sourceTree = "<group>";
@@ -284,10 +290,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8436E1EC24480AE000F1CE83 /* BudgetTableViewHeader.xib in Resources */,
 				84784C5F2447A39D0032D5E2 /* LaunchScreen.storyboard in Resources */,
 				84784C5C2447A39D0032D5E2 /* Assets.xcassets in Resources */,
 				8436E1E724480AA000F1CE83 /* BudgetTableViewCell.xib in Resources */,
+				848FE8412449195000522AF3 /* BudgetTableViewHeader.xib in Resources */,
 				8436E1F324480B5700F1CE83 /* TransactionTableViewCell.xib in Resources */,
 				84784C5A2447A39B0032D5E2 /* Main.storyboard in Resources */,
 			);
@@ -361,12 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848FE83D2449110A00522AF3 /* Date+ToString.swift in Sources */,
 				8436E1EA24480AC200F1CE83 /* BudgetTableViewHeader.swift in Sources */,
 				8436E1F524480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift in Sources */,
 				8436E1F924480E6500F1CE83 /* Transaction.swift in Sources */,
 				8436E1F724480D8100F1CE83 /* Budget.swift in Sources */,
 				8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */,
 				8436E1D6244807A000F1CE83 /* LoginViewController.swift in Sources */,
+				848FE83F2449112E00522AF3 /* String+FloatValue.swift in Sources */,
 				8436E2042448227500F1CE83 /* R.generated.swift in Sources */,
 				8436E1E224480A1300F1CE83 /* AddExpensesTableViewController.swift in Sources */,
 				8436E1EE24480AF600F1CE83 /* Date+Formatter.swift in Sources */,

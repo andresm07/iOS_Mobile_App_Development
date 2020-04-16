@@ -9,7 +9,10 @@
 import UIKit
 
 class ConfigurationViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var appVersionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
