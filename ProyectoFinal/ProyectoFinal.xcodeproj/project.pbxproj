@@ -3,14 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		36EEFFE9A7541CEF867703C7 /* Pods_ProyectoFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6819548226440991076D679C /* Pods_ProyectoFinal.framework */; };
+		8436E1D02448061300F1CE83 /* BudgetListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1CF2448061300F1CE83 /* BudgetListTableViewController.swift */; };
+		8436E1D22448074A00F1CE83 /* HistoryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1D12448074A00F1CE83 /* HistoryListTableViewController.swift */; };
+		8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1D32448077000F1CE83 /* ConfigurationViewController.swift */; };
+		8436E1D6244807A000F1CE83 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1D5244807A000F1CE83 /* LoginViewController.swift */; };
+		8436E1DC244808FD00F1CE83 /* AddBudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1DB244808FD00F1CE83 /* AddBudgetTableViewController.swift */; };
+		8436E1E0244809FC00F1CE83 /* AddMoneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1DF244809FC00F1CE83 /* AddMoneyTableViewController.swift */; };
+		8436E1E224480A1300F1CE83 /* AddExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1E124480A1300F1CE83 /* AddExpensesTableViewController.swift */; };
+		8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1E424480AA000F1CE83 /* BudgetTableViewCell.swift */; };
+		8436E1E724480AA000F1CE83 /* BudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436E1E524480AA000F1CE83 /* BudgetTableViewCell.xib */; };
+		8436E1EA24480AC200F1CE83 /* BudgetTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1E924480AC200F1CE83 /* BudgetTableViewHeader.swift */; };
+		8436E1EC24480AE000F1CE83 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436E1EB24480AE000F1CE83 /* BudgetTableViewHeader.xib */; };
+		8436E1EE24480AF600F1CE83 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */; };
+		8436E1F224480B5700F1CE83 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F024480B5700F1CE83 /* TransactionTableViewCell.swift */; };
+		8436E1F324480B5700F1CE83 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436E1F124480B5700F1CE83 /* TransactionTableViewCell.xib */; };
+		8436E1F524480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F424480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift */; };
+		8436E1F724480D8100F1CE83 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F624480D8100F1CE83 /* Budget.swift */; };
+		8436E1F924480E6500F1CE83 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F824480E6500F1CE83 /* Transaction.swift */; };
+		8436E1FB24480E9800F1CE83 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FA24480E9800F1CE83 /* Person.swift */; };
+		8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */; };
 		84784C532447A39B0032D5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84784C522447A39B0032D5E2 /* AppDelegate.swift */; };
 		84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84784C542447A39B0032D5E2 /* SceneDelegate.swift */; };
-		84784C572447A39B0032D5E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84784C562447A39B0032D5E2 /* ViewController.swift */; };
 		84784C5A2447A39B0032D5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C582447A39B0032D5E2 /* Main.storyboard */; };
 		84784C5C2447A39D0032D5E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84784C5B2447A39D0032D5E2 /* Assets.xcassets */; };
 		84784C5F2447A39D0032D5E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C5D2447A39D0032D5E2 /* LaunchScreen.storyboard */; };
@@ -19,10 +37,28 @@
 /* Begin PBXFileReference section */
 		62605AE9F4CD2943349F725D /* Pods-ProyectoFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinal.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFinal/Pods-ProyectoFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		6819548226440991076D679C /* Pods_ProyectoFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8436E1CF2448061300F1CE83 /* BudgetListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListTableViewController.swift; sourceTree = "<group>"; };
+		8436E1D12448074A00F1CE83 /* HistoryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListTableViewController.swift; sourceTree = "<group>"; };
+		8436E1D32448077000F1CE83 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		8436E1D5244807A000F1CE83 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8436E1DB244808FD00F1CE83 /* AddBudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetTableViewController.swift; sourceTree = "<group>"; };
+		8436E1DF244809FC00F1CE83 /* AddMoneyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyTableViewController.swift; sourceTree = "<group>"; };
+		8436E1E124480A1300F1CE83 /* AddExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesTableViewController.swift; sourceTree = "<group>"; };
+		8436E1E424480AA000F1CE83 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		8436E1E524480AA000F1CE83 /* BudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewCell.xib; sourceTree = "<group>"; };
+		8436E1E924480AC200F1CE83 /* BudgetTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewHeader.swift; sourceTree = "<group>"; };
+		8436E1EB24480AE000F1CE83 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
+		8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		8436E1F024480B5700F1CE83 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		8436E1F124480B5700F1CE83 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		8436E1F424480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBudgetTableViewController.swift; sourceTree = "<group>"; };
+		8436E1F624480D8100F1CE83 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		8436E1F824480E6500F1CE83 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		8436E1FA24480E9800F1CE83 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		84784C4F2447A39B0032D5E2 /* ProyectoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84784C522447A39B0032D5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84784C542447A39B0032D5E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84784C562447A39B0032D5E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84784C592447A39B0032D5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84784C5B2447A39D0032D5E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84784C5E2447A39D0032D5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +78,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8436E1CE244805C300F1CE83 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1CF2448061300F1CE83 /* BudgetListTableViewController.swift */,
+				8436E1D12448074A00F1CE83 /* HistoryListTableViewController.swift */,
+				8436E1D32448077000F1CE83 /* ConfigurationViewController.swift */,
+				8436E1D5244807A000F1CE83 /* LoginViewController.swift */,
+				8436E1DB244808FD00F1CE83 /* AddBudgetTableViewController.swift */,
+				8436E1DF244809FC00F1CE83 /* AddMoneyTableViewController.swift */,
+				8436E1E124480A1300F1CE83 /* AddExpensesTableViewController.swift */,
+				8436E1F424480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift */,
+				8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8436E1D7244807BD00F1CE83 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1EF24480B3800F1CE83 /* TransactionTableViewCell */,
+				8436E1E824480AA500F1CE83 /* BudgetTableViewHeader */,
+				8436E1E324480A8600F1CE83 /* BudgetTableViewCell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		8436E1D8244807CB00F1CE83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1F624480D8100F1CE83 /* Budget.swift */,
+				8436E1F824480E6500F1CE83 /* Transaction.swift */,
+				8436E1FA24480E9800F1CE83 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8436E1D9244807CF00F1CE83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8436E1DA244807DA00F1CE83 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84784C5D2447A39D0032D5E2 /* LaunchScreen.storyboard */,
+				84784C582447A39B0032D5E2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8436E1E324480A8600F1CE83 /* BudgetTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1E424480AA000F1CE83 /* BudgetTableViewCell.swift */,
+				8436E1E524480AA000F1CE83 /* BudgetTableViewCell.xib */,
+			);
+			path = BudgetTableViewCell;
+			sourceTree = "<group>";
+		};
+		8436E1E824480AA500F1CE83 /* BudgetTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1E924480AC200F1CE83 /* BudgetTableViewHeader.swift */,
+				8436E1EB24480AE000F1CE83 /* BudgetTableViewHeader.xib */,
+			);
+			path = BudgetTableViewHeader;
+			sourceTree = "<group>";
+		};
+		8436E1EF24480B3800F1CE83 /* TransactionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8436E1F024480B5700F1CE83 /* TransactionTableViewCell.swift */,
+				8436E1F124480B5700F1CE83 /* TransactionTableViewCell.xib */,
+			);
+			path = TransactionTableViewCell;
+			sourceTree = "<group>";
+		};
 		84784C462447A39B0032D5E2 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +179,14 @@
 		84784C512447A39B0032D5E2 /* ProyectoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				8436E1DA244807DA00F1CE83 /* Storyboards */,
+				8436E1D9244807CF00F1CE83 /* Extensions */,
+				8436E1D8244807CB00F1CE83 /* Models */,
+				8436E1D7244807BD00F1CE83 /* Custom Cells */,
+				8436E1CE244805C300F1CE83 /* Controllers */,
 				84784C522447A39B0032D5E2 /* AppDelegate.swift */,
 				84784C542447A39B0032D5E2 /* SceneDelegate.swift */,
-				84784C562447A39B0032D5E2 /* ViewController.swift */,
-				84784C582447A39B0032D5E2 /* Main.storyboard */,
 				84784C5B2447A39D0032D5E2 /* Assets.xcassets */,
-				84784C5D2447A39D0032D5E2 /* LaunchScreen.storyboard */,
 				84784C602447A39D0032D5E2 /* Info.plist */,
 			);
 			path = ProyectoFinal;
@@ -80,7 +198,6 @@
 				62605AE9F4CD2943349F725D /* Pods-ProyectoFinal.debug.xcconfig */,
 				D55B41C6FD772708081A90F0 /* Pods-ProyectoFinal.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,8 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8436E1EC24480AE000F1CE83 /* BudgetTableViewHeader.xib in Resources */,
 				84784C5F2447A39D0032D5E2 /* LaunchScreen.storyboard in Resources */,
 				84784C5C2447A39D0032D5E2 /* Assets.xcassets in Resources */,
+				8436E1E724480AA000F1CE83 /* BudgetTableViewCell.xib in Resources */,
+				8436E1F324480B5700F1CE83 /* TransactionTableViewCell.xib in Resources */,
 				84784C5A2447A39B0032D5E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +327,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84784C572447A39B0032D5E2 /* ViewController.swift in Sources */,
+				8436E1EA24480AC200F1CE83 /* BudgetTableViewHeader.swift in Sources */,
+				8436E1F524480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift in Sources */,
+				8436E1F924480E6500F1CE83 /* Transaction.swift in Sources */,
+				8436E1F724480D8100F1CE83 /* Budget.swift in Sources */,
+				8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */,
+				8436E1D6244807A000F1CE83 /* LoginViewController.swift in Sources */,
+				8436E1D22448074A00F1CE83 /* HistoryListTableViewController.swift in Sources */,
+				8436E1E224480A1300F1CE83 /* AddExpensesTableViewController.swift in Sources */,
+				8436E1EE24480AF600F1CE83 /* Date+Formatter.swift in Sources */,
+				8436E1D02448061300F1CE83 /* BudgetListTableViewController.swift in Sources */,
+				8436E1F224480B5700F1CE83 /* TransactionTableViewCell.swift in Sources */,
 				84784C532447A39B0032D5E2 /* AppDelegate.swift in Sources */,
+				8436E1DC244808FD00F1CE83 /* AddBudgetTableViewController.swift in Sources */,
+				8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */,
+				8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */,
+				8436E1FB24480E9800F1CE83 /* Person.swift in Sources */,
 				84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */,
+				8436E1E0244809FC00F1CE83 /* AddMoneyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
