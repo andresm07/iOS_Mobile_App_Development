@@ -114,6 +114,21 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `LaunchScreen`.
+    static let launchScreen = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchScreen")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "LaunchScreen", bundle: ..., traitCollection: ...)`
+    static func launchScreen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launchScreen, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `BudgetTableViewCell`.
@@ -240,6 +255,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "LaunchScreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'LaunchScreen' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
