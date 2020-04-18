@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HistoryListViewController: UIViewController {
 
@@ -14,7 +15,8 @@ class HistoryListViewController: UIViewController {
     
     let budgetTableViewHeaderIdentifier = "BudgetTableViewHeader"
     let transactionTableViewCellIdentifier = "TransactionTableViewCell"
-    var budgets = [Budget]()
+    var budgets: Results<Budget>?
+    let realmManager = RealmManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,20 @@ class HistoryListViewController: UIViewController {
         
         registerCustomCells()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getBudgets()
+    }
+    
+    private func getBudgets() {
+        let budgets = self.realmManager.getAllBudgets()
+        if let budgets = budgets, budgets.isEmpty {
+            getBudgets()
+        } else {
+            self.budgets = budgets
+            self.historyListTableView.reloadData()
+        }
     }
     
     private func registerCustomCells() {
@@ -37,11 +53,11 @@ class HistoryListViewController: UIViewController {
 extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.budgets.count
+        return self.budgets?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.budgets[section].transactions.count
+        return (self.budgets?[section].transactions.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +65,7 @@ extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource 
         {
             return UITableViewCell()
         }
-        cell.setupCell(transaction: self.budgets[indexPath.section].transactions[indexPath.row])
+        cell.setupCell(transaction: (self.budgets?[indexPath.section].transactions[indexPath.row])!)
         return cell
     }
     
@@ -61,7 +77,7 @@ extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let cell = self.historyListTableView.dequeueReusableHeaderFooterView(withIdentifier: R.nib.budgetTableViewHeader.name) as? BudgetTableViewHeader else {
             return UIView()
         }
-        cell.setupCell(budget: self.budgets[section])
+        cell.setupCell(budget: (self.budgets?[section])!)
         return cell
     }
     

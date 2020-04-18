@@ -9,16 +9,22 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
-//        let budgetListViewController = (self.tabBarController?.viewControllers![0])! as! BudgetListViewController
-//
-//        let historyListViewController = (self.tabBarController?.viewControllers![1])! as! HistoryListViewController
-//
-//        historyListViewController.budgets = Array(budgetListViewController.budgets!)
+    }
+    
+    @objc func didBecomeActive() {
+        //significa que el app viene de background
+    }
+    
+    @objc func didEnterBackground() {
         
+        //significa que el app vara para background
     }
     
 }

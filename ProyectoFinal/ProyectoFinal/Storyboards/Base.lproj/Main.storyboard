@@ -324,6 +324,9 @@
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-PM-GVM">
                                                             <rect key="frame" x="207" y="0.0" width="209" height="43.5"/>
+                                                            <connections>
+                                                                <action selector="rolloverSwitchAction:" destination="BRd-ae-vO0" eventType="valueChanged" id="xmp-1z-plC"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
