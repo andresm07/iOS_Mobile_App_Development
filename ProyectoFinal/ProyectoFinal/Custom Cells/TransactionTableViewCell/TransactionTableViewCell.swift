@@ -13,6 +13,7 @@ class TransactionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var transactionDetailsLabel: UILabel!
     @IBOutlet weak var transactionAmountLabel: UILabel!
+    @IBOutlet weak var transactionTypeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,7 @@ class TransactionTableViewCell: UITableViewCell {
     public func setupCell(transaction: Transaction) {
         self.transactionDetailsLabel.text = transaction.detail
         self.transactionAmountLabel.text = String(transaction.amount)
+        self.transactionTypeLabel.text = transaction.type
     }
     
 }

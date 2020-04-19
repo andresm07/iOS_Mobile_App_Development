@@ -66,5 +66,7 @@ class RealmManager {
             print("Realm Error")
         }
     }
+    
+    
 }
 

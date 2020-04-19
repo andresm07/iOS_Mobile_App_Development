@@ -14,12 +14,14 @@ class Transaction: Object {
     @objc dynamic var detail = ""
     @objc dynamic var amount: Float = 0.0
     @objc dynamic var date = Date()
+    @objc dynamic var type = ""
     
     let budgets = LinkingObjects(fromType: Budget.self, property: "transactions")
     
-    convenience init(detail: String, amount: Float) {
+    convenience init(detail: String, amount: Float, type: String) {
         self.init()
         self.detail = detail
         self.amount = amount
+        self.type = type
     }
 }

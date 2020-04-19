@@ -40,7 +40,7 @@ class BudgetListViewController: UIViewController {
     }
     
     @objc func addBudgetAction(sender: UIBarButtonItem) {
-        if let addBudgetTableViewController = storyboard?.instantiateViewController(identifier: "AddBudgetTableViewController") as? AddBudgetTableViewController {
+        if let addBudgetTableViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.addBudgetTableViewController.identifier) as? AddBudgetTableViewController {
             addBudgetTableViewController.delegate = self
             navigationController?.pushViewController(addBudgetTableViewController, animated: true)
         }
@@ -79,9 +79,9 @@ extension BudgetListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.setupCell(budget: (self.budgets?[indexPath.row])!)
         if (self.budgets?[indexPath.row].amount)! <= 0.0 {
-            cell.backgroundColor = UIColor(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 1.0)
+            cell.backgroundColor = UIColor(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.7)
         } else {
-            cell.backgroundColor = UIColor(red: (153.0/255.0), green: (204.0/255.0), blue: (255.0/255.0), alpha: 1.0)
+            cell.backgroundColor = UIColor(red: (81.0/255.0), green: (193.0/255.0), blue: (120.0/255.0), alpha: 0.7)
         }
         return cell
     }
@@ -91,25 +91,48 @@ extension BudgetListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let addBudgetTableViewController = storyboard?.instantiateViewController(identifier: "AddBudgetTableViewController") as? AddBudgetTableViewController {
-            addBudgetTableViewController.budget = self.budgets?[indexPath.row]
-            navigationController?.pushViewController(addBudgetTableViewController, animated: true)
+        if let visualizeBudgetTableViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.visualizeBudgetTableViewController.identifier) as? VisualizeBudgetTableViewController {
+            visualizeBudgetTableViewController.budget = self.budgets?[indexPath.row]
+            navigationController?.pushViewController(visualizeBudgetTableViewController, animated: true)
         }
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            if let budget = self.budgets?[indexPath.row] {
+//                self.realmManager.deleteBudget(budget: budget)
+//                self.budgetListTableView.beginUpdates()
+//                self.budgetListTableView.deleteRows(at: [indexPath], with: .fade)
+//                self.budgetListTableView.endUpdates()
+//            }
+//        }
+//    }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteTitle = NSLocalizedString("Delete", comment: "Delete")
+        let deleteAction = UITableViewRowAction(style: .destructive, title: deleteTitle) { (actiion, indexPath) in
             if let budget = self.budgets?[indexPath.row] {
                 self.realmManager.deleteBudget(budget: budget)
                 self.budgetListTableView.beginUpdates()
                 self.budgetListTableView.deleteRows(at: [indexPath], with: .fade)
                 self.budgetListTableView.endUpdates()
             }
-        } 
+        }
+        
+        let editTitle = NSLocalizedString("Edit", comment: "Edit")
+        let editAction = UITableViewRowAction(style: .normal, title: editTitle) { (action, indexPath) in
+            if let addBudgetTableViewController = self.storyboard?.instantiateViewController(identifier: R.storyboard.main.addBudgetTableViewController.identifier) as? AddBudgetTableViewController {
+            addBudgetTableViewController.budget = self.budgets?[indexPath.row]
+                self.navigationController?.pushViewController(addBudgetTableViewController, animated: true)
+            }
+        }
+        
+        return [editAction, deleteAction]
     }
     
 }

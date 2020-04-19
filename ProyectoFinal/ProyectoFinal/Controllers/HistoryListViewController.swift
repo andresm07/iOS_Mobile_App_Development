@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class HistoryListViewController: UIViewController {
-
+    
     @IBOutlet weak var historyListTableView: UITableView!
     
     let budgetTableViewHeaderIdentifier = "BudgetTableViewHeader"
@@ -20,7 +20,7 @@ class HistoryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.historyListTableView.delegate = self
         self.historyListTableView.dataSource = self
         
@@ -47,7 +47,7 @@ class HistoryListViewController: UIViewController {
         self.historyListTableView.register(UINib(resource: R.nib.budgetTableViewHeader), forHeaderFooterViewReuseIdentifier: R.nib.budgetTableViewHeader.name)
     }
     
-
+    
 }
 
 extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,5 +81,22 @@ extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100.0
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteTitle = NSLocalizedString("Delete", comment: "Delete")
+        let deleteAction = UITableViewRowAction(style: .destructive, title: deleteTitle) { (actiion, indexPath) in
+            if let transaction = self.budgets?[indexPath.section].transactions[indexPath.row] {
+                self.realmManager.deleteTransaction(transaction: transaction)
+                self.historyListTableView.beginUpdates()
+                self.historyListTableView.deleteRows(at: [indexPath], with: .fade)
+                self.historyListTableView.endUpdates()
+            }
+        }
+        return [deleteAction]
+    }
     
 }
