@@ -29,6 +29,7 @@ class AddExpensesTableViewController: UITableViewController {
     @IBAction func saveExpenseAction(_ sender: Any) {
         let transaction = Transaction(detail: self.budgetDetailsTextField.text!, amount: self.budgetAmountTextField.text!.floatValue, type: "Expense")
         self.realmManager.addTransactionToBudget(transaction: transaction, budget: self.budget!)
+        self.realmManager.updateMainBudgetAmount(transaction: transaction, budget: self.budget!)
         navigationController?.popViewController(animated: true)
     }
 }

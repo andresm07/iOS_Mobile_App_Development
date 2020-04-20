@@ -30,6 +30,20 @@ class BudgetListViewController: UIViewController {
         getBudgets()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateBudgetList()
+    }
+    
+    private func updateBudgetList() {
+        let budgets = self.realmManager.getAllBudgets()
+        if let budgets = budgets, budgets.isEmpty {
+            updateBudgetList()
+        } else {
+            self.budgets = budgets
+            self.budgetListTableView.reloadData()
+        }
+    }
+    
     private func registerCustomCells() {
         self.budgetListTableView.register(UINib(resource: R.nib.budgetTableViewCell), forCellReuseIdentifier: R.nib.budgetTableViewCell.name)
     }

@@ -30,6 +30,7 @@ class AddMoneyTableViewController: UITableViewController {
     @IBAction func saveMoneyAction(_ sender: Any) {
         let transaction = Transaction(detail: self.budgetDetailsTextField.text!, amount: self.budgetAmountTextField.text!.floatValue, type: "Deposit")
         self.realmManager.addTransactionToBudget(transaction: transaction, budget: self.budget!)
+        self.realmManager.updateMainBudgetAmount(transaction: transaction, budget: self.budget!)
         navigationController?.popViewController(animated: true)
     }
     

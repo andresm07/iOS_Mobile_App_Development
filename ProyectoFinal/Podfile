@@ -7,6 +7,7 @@ target 'ProyectoFinal' do
 
   pod 'RealmSwift'
   pod 'R.swift'
+  pod 'SwiftDate', '~> 5.0'
 
   # Pods for ProyectoFinal
 

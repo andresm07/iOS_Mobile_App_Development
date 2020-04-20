@@ -29,13 +29,13 @@ class HistoryListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getBudgets()
+        updateBudgetList()
     }
     
-    private func getBudgets() {
+    private func updateBudgetList() {
         let budgets = self.realmManager.getAllBudgets()
         if let budgets = budgets, budgets.isEmpty {
-            getBudgets()
+            updateBudgetList()
         } else {
             self.budgets = budgets
             self.historyListTableView.reloadData()

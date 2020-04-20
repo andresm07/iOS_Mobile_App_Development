@@ -67,6 +67,20 @@ class RealmManager {
         }
     }
     
+    public func updateMainBudgetAmount(transaction: Transaction, budget: Budget) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                if transaction.type == "Deposit" {
+                    budget.amount += transaction.amount
+                } else if transaction.type == "Expense" {
+                    budget.amount -= transaction.amount
+                }
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
     
 }
 
