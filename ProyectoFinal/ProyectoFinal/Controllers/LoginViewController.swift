@@ -45,6 +45,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
+        //validateLogin()
+        if let tabBarController = storyboard?.instantiateViewController(identifier: R.storyboard.main.tabBarViewController.identifier) {
+            //let user = self.realmManager.getUser(username: username, password: password)
+            //tabBarController.currentUser = user
+            tabBarController.modalPresentationStyle = .fullScreen
+            present(tabBarController, animated: true, completion: nil)
+        }
+    }
+    
+    private func validateLogin() {
         let realmManager = RealmManager()
         if let username = self.usernameTextField.text, username.count > 0, let password = self.passwordTextField.text, password.count > 0 {
             if realmManager.validateLogin(username: username, password: password) {

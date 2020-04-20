@@ -92,6 +92,7 @@ extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource 
         let deleteAction = UITableViewRowAction(style: .destructive, title: deleteTitle) { (actiion, indexPath) in
             if let transaction = self.budgets?[indexPath.section].transactions[indexPath.row] {
                 self.realmManager.deleteTransaction(transaction: transaction)
+                //self.realmManager.updateMainBudgetAmountDeletedTransaction(transaction: transaction, budget: (self.budgets?[indexPath.section])!)
                 self.historyListTableView.beginUpdates()
                 self.historyListTableView.deleteRows(at: [indexPath], with: .fade)
                 self.historyListTableView.endUpdates()

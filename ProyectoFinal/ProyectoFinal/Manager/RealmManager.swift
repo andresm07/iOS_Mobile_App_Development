@@ -80,6 +80,21 @@ class RealmManager {
         }
     }
     
+    public func updateMainBudgetAmountDeletedTransaction(transaction: Transaction, budget: Budget) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                if transaction.type == "Deposit" {
+                    budget.amount -= transaction.amount
+                } else if transaction.type == "Expense" {
+                    budget.amount += transaction.amount
+                }
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
+    
     public func validateLogin(username: String, password: String) -> Bool{
         var found = false
         do {
@@ -125,6 +140,19 @@ class RealmManager {
 //    public func getUser(completionHandler:(_ user: Results<User>?) -> Void) {
 //        completionHandler(getUser(completionHandler: <#(Results<User>?) -> Void#>))
 //    }
+    
+    public func deleteUserBudgets(user: User) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                for budget in user.budgets {
+                    realm.delete(budget)
+                }
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
     
 }
 
