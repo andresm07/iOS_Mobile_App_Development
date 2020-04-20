@@ -16,6 +16,7 @@ class HistoryListViewController: UIViewController {
     let budgetTableViewHeaderIdentifier = "BudgetTableViewHeader"
     let transactionTableViewCellIdentifier = "TransactionTableViewCell"
     var budgets: Results<Budget>?
+    var currentUser: User?
     let realmManager = RealmManager()
     
     override func viewDidLoad() {

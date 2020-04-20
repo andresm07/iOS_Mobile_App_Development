@@ -9,11 +9,13 @@
 import Foundation
 import RealmSwift
 
-class Person: Object {
+class User: Object {
     
     @objc dynamic var name = ""
     @objc dynamic var username = ""
     @objc dynamic var password = ""
+    
+    let budgets = List<Budget>()
     
     convenience init(name: String, username: String, password: String) {
         self.init()

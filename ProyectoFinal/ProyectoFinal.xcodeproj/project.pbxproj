@@ -22,7 +22,7 @@
 		8436E1F524480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F424480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift */; };
 		8436E1F724480D8100F1CE83 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F624480D8100F1CE83 /* Budget.swift */; };
 		8436E1F924480E6500F1CE83 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1F824480E6500F1CE83 /* Transaction.swift */; };
-		8436E1FB24480E9800F1CE83 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FA24480E9800F1CE83 /* Person.swift */; };
+		8436E1FB24480E9800F1CE83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FA24480E9800F1CE83 /* User.swift */; };
 		8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */; };
 		8436E1FF24481A3700F1CE83 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E1FE24481A3700F1CE83 /* BudgetListViewController.swift */; };
 		8436E20124481A4700F1CE83 /* HistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436E20024481A4700F1CE83 /* HistoryListViewController.swift */; };
@@ -36,6 +36,8 @@
 		848FE83D2449110A00522AF3 /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83C2449110A00522AF3 /* Date+ToString.swift */; };
 		848FE83F2449112E00522AF3 /* String+FloatValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83E2449112E00522AF3 /* String+FloatValue.swift */; };
 		848FE8412449195000522AF3 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */; };
+		84A5AAAC244D2B2F004355D5 /* BudgetTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */; };
+		84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,7 @@
 		8436E1F424480CDE00F1CE83 /* VisualizeBudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBudgetTableViewController.swift; sourceTree = "<group>"; };
 		8436E1F624480D8100F1CE83 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		8436E1F824480E6500F1CE83 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		8436E1FA24480E9800F1CE83 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8436E1FA24480E9800F1CE83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8436E1FE24481A3700F1CE83 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		8436E20024481A4700F1CE83 /* HistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,8 @@
 		848FE83C2449110A00522AF3 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		848FE83E2449112E00522AF3 /* String+FloatValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FloatValue.swift"; sourceTree = "<group>"; };
 		848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
+		84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTimeManager.swift; sourceTree = "<group>"; };
+		84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		D55B41C6FD772708081A90F0 /* Pods-ProyectoFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinal.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFinal/Pods-ProyectoFinal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,7 @@
 				8436E1FC24480F8200F1CE83 /* TabBarViewController.swift */,
 				8436E1FE24481A3700F1CE83 /* BudgetListViewController.swift */,
 				8436E20024481A4700F1CE83 /* HistoryListViewController.swift */,
+				84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -117,7 +122,7 @@
 			children = (
 				8436E1F624480D8100F1CE83 /* Budget.swift */,
 				8436E1F824480E6500F1CE83 /* Transaction.swift */,
-				8436E1FA24480E9800F1CE83 /* Person.swift */,
+				8436E1FA24480E9800F1CE83 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8436E206244822F600F1CE83 /* RealmManager.swift */,
+				84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -383,9 +389,11 @@
 				8436E1DC244808FD00F1CE83 /* AddBudgetTableViewController.swift in Sources */,
 				8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */,
 				8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */,
-				8436E1FB24480E9800F1CE83 /* Person.swift in Sources */,
+				8436E1FB24480E9800F1CE83 /* User.swift in Sources */,
 				8436E1FF24481A3700F1CE83 /* BudgetListViewController.swift in Sources */,
+				84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */,
 				84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */,
+				84A5AAAC244D2B2F004355D5 /* BudgetTimeManager.swift in Sources */,
 				8436E207244822F600F1CE83 /* RealmManager.swift in Sources */,
 				8436E1E0244809FC00F1CE83 /* AddMoneyTableViewController.swift in Sources */,
 				8436E20124481A4700F1CE83 /* HistoryListViewController.swift in Sources */,

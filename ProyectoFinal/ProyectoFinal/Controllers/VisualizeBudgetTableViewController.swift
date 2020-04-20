@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftDate
 
 class VisualizeBudgetTableViewController: UITableViewController {
     
@@ -24,55 +23,11 @@ class VisualizeBudgetTableViewController: UITableViewController {
         if let budget = self.budget {
             self.budgetNameLabel.text = budget.name
             self.budgetAmountLabel.text = String(budget.amount)
-            self.daysRemainingLabel.text = getRemainingDays()
+            self.daysRemainingLabel.text = BudgetTimeManager.getRemainingDays(budget: self.budget!)
         }
         
     }
     
-    private func getRemainingDays() -> String{
-        var remainingDays = ""
-        let budgetInitialDate: Date = self.budget!.initialDate
-        var budgetEndingDate: Date
-        switch self.budget?.periodicity {
-        case "Weekly":
-            budgetEndingDate = (budgetInitialDate + 7.days)
-            let hours = budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .hour)
-            if hours > 24 {
-                remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
-            } else {
-                remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
-            }
-            
-        case "Quarterly":
-            budgetEndingDate = (budgetInitialDate + 15.days)
-            let hours = budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .hour)
-            if hours > 24 {
-                remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
-            } else {
-                remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
-            }
-            
-        case "Monthly":
-            budgetEndingDate = (budgetInitialDate + 1.months)
-            let hours = budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .hour)
-            if hours > 24 {
-                remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
-            } else {
-                remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
-            }
-
-        default:
-            return ""
-        }
-        return remainingDays
-    }
-    
-    private func getTimerCountdown(budgetInitialDate: Date, budgetEndingDate: Date) -> String {
-        var timeRemaining = ""
-        return timeRemaining
-    }
-
-
     @IBAction func addMoneyAction(_ sender: Any) {
         if let addMoneyTableViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.addMoneyTableViewController.identifier) as? AddMoneyTableViewController {
             addMoneyTableViewController.budget = self.budget
@@ -82,6 +37,7 @@ class VisualizeBudgetTableViewController: UITableViewController {
     
     @IBAction func addExpenseAction(_ sender: Any) {
         if let addExpensesTableViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.addExpensesTableViewController.identifier) as? AddExpensesTableViewController {
+            addExpensesTableViewController.budget = self.budget
             navigationController?.pushViewController(addExpensesTableViewController, animated: true)
         }
     }

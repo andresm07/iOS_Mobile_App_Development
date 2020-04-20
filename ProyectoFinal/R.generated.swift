@@ -277,6 +277,7 @@ struct _R: Rswift.Validatable {
       let historyListViewController = StoryboardViewControllerResource<HistoryListViewController>(identifier: "HistoryListViewController")
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Main"
+      let registrationViewController = StoryboardViewControllerResource<RegistrationViewController>(identifier: "RegistrationViewController")
       let tabBarViewController = StoryboardViewControllerResource<TabBarViewController>(identifier: "TabBarViewController")
       let visualizeBudgetTableViewController = StoryboardViewControllerResource<VisualizeBudgetTableViewController>(identifier: "VisualizeBudgetTableViewController")
 
@@ -308,6 +309,10 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
       }
 
+      func registrationViewController(_: Void = ()) -> RegistrationViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: registrationViewController)
+      }
+
       func tabBarViewController(_: Void = ()) -> TabBarViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: tabBarViewController)
       }
@@ -329,6 +334,7 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.main().configurationViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'configurationViewController' could not be loaded from storyboard 'Main' as 'ConfigurationViewController'.") }
         if _R.storyboard.main().historyListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'historyListViewController' could not be loaded from storyboard 'Main' as 'HistoryListViewController'.") }
         if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
+        if _R.storyboard.main().registrationViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationViewController' could not be loaded from storyboard 'Main' as 'RegistrationViewController'.") }
         if _R.storyboard.main().tabBarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'tabBarViewController' could not be loaded from storyboard 'Main' as 'TabBarViewController'.") }
         if _R.storyboard.main().visualizeBudgetTableViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'visualizeBudgetTableViewController' could not be loaded from storyboard 'Main' as 'VisualizeBudgetTableViewController'.") }
       }

@@ -15,6 +15,7 @@ class BudgetListViewController: UIViewController {
     
     let budgetTableViewCellIdentifier = "BudgetTableViewCell"
     var budgets: Results<Budget>?
+    var currentUser: User?
     let realmManager = RealmManager()
     
     override func viewDidLoad() {

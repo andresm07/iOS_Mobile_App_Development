@@ -23,13 +23,11 @@ class RealmManager {
         }
     }
     
-    //Metodo sincrono
     public func getAllBudgets() -> Results<Budget>? {
         let realm = try? Realm()
         return realm?.objects(Budget.self)
     }
     
-    //Metodo asincrono
     public func getAllBudgets(completionHandler:(_ budgets: Results<Budget>?) -> Void) {
         completionHandler(getAllBudgets())
     }
@@ -81,6 +79,52 @@ class RealmManager {
             print("Realm Error")
         }
     }
+    
+    public func validateLogin(username: String, password: String) -> Bool{
+        var found = false
+        do {
+            let realm = try Realm()
+            let loginPredicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
+            let validUser = realm.objects(User.self).filter(loginPredicate)
+            if validUser.count == 1 {
+                found = true
+            }
+        } catch {
+            print("Realm Error")
+        }
+        return found
+    }
+    
+    public func getAllUsers() -> Results<User>? {
+        let realm = try? Realm()
+        return realm?.objects(User.self)
+    }
+    
+    public func getAllUsers(completionHandler:(_ users: Results<User>?) -> Void) {
+        completionHandler(getAllUsers())
+    }
+    
+    public func insertUser(name: String, username: String, password: String) {
+        let user = User(name: name, username: username, password: password)
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(user, update: .all)
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
+    
+    public func getUser(username: String, password: String) -> Results<User>? {
+        let realm = try? Realm()
+        let searchPredicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
+        return realm?.objects(User.self).filter(searchPredicate)
+    }
+    
+//    public func getUser(completionHandler:(_ user: Results<User>?) -> Void) {
+//        completionHandler(getUser(completionHandler: <#(Results<User>?) -> Void#>))
+//    }
     
 }
 

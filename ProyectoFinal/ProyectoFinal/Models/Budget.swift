@@ -21,6 +21,8 @@ class Budget: Object {
     
     let transactions = List<Transaction>()
     
+    let owners = LinkingObjects(fromType: User.self, property: "budgets")
+    
     convenience init(name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
         self.init()
         self.name = name

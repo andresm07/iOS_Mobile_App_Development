@@ -10,6 +10,8 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
+    var currentUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let notificationCenter = NotificationCenter.default
