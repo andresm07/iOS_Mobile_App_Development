@@ -20,12 +20,21 @@ class VisualizeBudgetTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        if let budget = self.budget {
+//            self.budgetNameLabel.text = budget.name
+//            self.budgetAmountLabel.text = String(budget.amount)
+//            self.daysRemainingLabel.text = BudgetTimeManager.getRemainingDays(budget: self.budget!)
+//        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let budget = self.budget {
             self.budgetNameLabel.text = budget.name
             self.budgetAmountLabel.text = String(budget.amount)
             self.daysRemainingLabel.text = BudgetTimeManager.getRemainingDays(budget: self.budget!)
         }
-        
     }
     
     @IBAction func addMoneyAction(_ sender: Any) {

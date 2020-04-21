@@ -11,6 +11,7 @@ import RealmSwift
 
 class User: Object {
     
+    @objc dynamic var identifier = NSUUID().uuidString
     @objc dynamic var name = ""
     @objc dynamic var username = ""
     @objc dynamic var password = ""
@@ -22,5 +23,13 @@ class User: Object {
         self.name = name
         self.username = username
         self.password = password
+    }
+    
+    override static func primaryKey() -> String? {
+        return "identifier"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["identifier"]
     }
 }

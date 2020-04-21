@@ -45,13 +45,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        //validateLogin()
-        if let tabBarController = storyboard?.instantiateViewController(identifier: R.storyboard.main.tabBarViewController.identifier) {
-            //let user = self.realmManager.getUser(username: username, password: password)
-            //tabBarController.currentUser = user
-            tabBarController.modalPresentationStyle = .fullScreen
-            present(tabBarController, animated: true, completion: nil)
-        }
+        validateLogin()
+//        if let tabBarController = storyboard?.instantiateViewController(identifier: R.storyboard.main.tabBarViewController.identifier) {
+//            //let user = self.realmManager.getUser(username: username, password: password)
+//            //tabBarController.currentUser = user
+//            tabBarController.modalPresentationStyle = .fullScreen
+//            present(tabBarController, animated: true, completion: nil)
+//        }
     }
     
     private func validateLogin() {

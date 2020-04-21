@@ -137,9 +137,9 @@ class RealmManager {
         return realm?.objects(User.self).filter(searchPredicate)
     }
     
-//    public func getUser(completionHandler:(_ user: Results<User>?) -> Void) {
-//        completionHandler(getUser(completionHandler: <#(Results<User>?) -> Void#>))
-//    }
+    public func getUser(username: String, password: String, completionHandler:(_ user: Results<User>?) -> Void) {
+        completionHandler(getUser(username: username, password: password))
+    }
     
     public func deleteUserBudgets(user: User) {
         do {
