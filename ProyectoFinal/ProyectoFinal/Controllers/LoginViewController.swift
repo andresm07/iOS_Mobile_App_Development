@@ -63,12 +63,12 @@ class LoginViewController: UIViewController {
                     //tabBarController.currentUser = user
                     tabBarController.modalPresentationStyle = .fullScreen
                     present(tabBarController, animated: true, completion: nil)
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: "Invalid Username or Password", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alertController.addAction(alertAction)
-                    present(alertController, animated: true, completion: nil)
                 }
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "Invalid Username or Password", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(alertAction)
+                present(alertController, animated: true, completion: nil)
             }
         } else {
             let alertController = UIAlertController(title: "Error", message: "Please fill out data", preferredStyle: .alert)

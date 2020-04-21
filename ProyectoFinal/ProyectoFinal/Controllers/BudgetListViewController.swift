@@ -28,6 +28,7 @@ class BudgetListViewController: UIViewController {
         
         registerCustomCells()
         addBudgetNavitationButton()
+        addLogoutNavigationButton()
         getBudgets()
     }
     
@@ -58,6 +59,18 @@ class BudgetListViewController: UIViewController {
         if let addBudgetTableViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.addBudgetTableViewController.identifier) as? AddBudgetTableViewController {
             addBudgetTableViewController.delegate = self
             navigationController?.pushViewController(addBudgetTableViewController, animated: true)
+        }
+    }
+    
+    private func addLogoutNavigationButton() {
+        let addLogoutNavigationButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(addLogoutAction(sender:)))
+        navigationItem.leftBarButtonItem = addLogoutNavigationButton
+    }
+    
+    @objc func addLogoutAction(sender: UIBarButtonItem) {
+        if let loginViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.loginViewController.identifier) as? LoginViewController {
+            navigationController?.pushViewController(loginViewController, animated: true)
+            //self.navigationController?.viewControllers.removeAll()
         }
     }
     

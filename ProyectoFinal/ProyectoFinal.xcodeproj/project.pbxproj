@@ -38,6 +38,7 @@
 		848FE8412449195000522AF3 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */; };
 		84A5AAAC244D2B2F004355D5 /* BudgetTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */; };
 		84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */; };
+		84A5AAB0244E8D4A004355D5 /* Build+VersionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
 		84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTimeManager.swift; sourceTree = "<group>"; };
 		84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Build+VersionFormatter.swift"; sourceTree = "<group>"; };
 		D55B41C6FD772708081A90F0 /* Pods-ProyectoFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinal.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFinal/Pods-ProyectoFinal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				8436E1ED24480AF600F1CE83 /* Date+Formatter.swift */,
 				848FE83C2449110A00522AF3 /* Date+ToString.swift */,
 				848FE83E2449112E00522AF3 /* String+FloatValue.swift */,
+				84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */,
 				8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */,
 				8436E1FB24480E9800F1CE83 /* User.swift in Sources */,
+				84A5AAB0244E8D4A004355D5 /* Build+VersionFormatter.swift in Sources */,
 				8436E1FF24481A3700F1CE83 /* BudgetListViewController.swift in Sources */,
 				84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */,
 				84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */,

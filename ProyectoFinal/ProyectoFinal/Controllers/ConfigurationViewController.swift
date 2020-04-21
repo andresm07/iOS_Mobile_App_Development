@@ -10,21 +10,20 @@ import UIKit
 
 class ConfigurationViewController: UIViewController {
     
+    var user: User?
+    let realmManager = RealmManager()
     
     @IBOutlet weak var appVersionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject?
-        	
-        let version = nsObject as! String
         
-        self.appVersionLabel.text = version
+        self.appVersionLabel.text = "\(Bundle.main.appName) v \(Bundle.main.versionNumber) (Build \(Bundle.main.buildNumber))"
         
     }
     
 
     @IBAction func deleteDatabaseAction(_ sender: Any) {
+        
     }
 }

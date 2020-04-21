@@ -154,5 +154,27 @@ class RealmManager {
         }
     }
     
+    public func getAllUserBudgets(user: User) -> Results<Budget>? {
+        let realm = try? Realm()
+        let searchPredicate = NSPredicate(format: "name = %@", user.name)
+        return realm?.objects(Budget.self).filter(searchPredicate)
+    }
+    
+    public func getAllUserBudgets(user: User, completionHandler:(_ budgets: Results<Budget>?) -> Void) {
+        completionHandler(getAllUserBudgets(user: user))
+    }
+    
+    public func addBudgetToUser(user: User, name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
+        let budget = Budget(name: name, periodicity: periodicity, initialAmount: initialAmount, rollover: rollover)
+        do {
+            let realm = try Realm()
+            try realm.write {
+                user.budgets.append(budget)
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
+    
 }
 

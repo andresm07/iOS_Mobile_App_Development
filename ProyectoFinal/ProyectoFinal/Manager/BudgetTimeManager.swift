@@ -15,10 +15,11 @@ class BudgetTimeManager {
         var remainingDays = ""
         let budgetInitialDate: Date = budget.initialDate
         var budgetEndingDate: Date
+        let currentDate: Date = Date()
         switch budget.periodicity {
         case "Weekly":
             budgetEndingDate = (budgetInitialDate + 7.days)
-            let hours = budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .hour)
+            let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
             if hours > 24 {
                 remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
             } else {
@@ -27,7 +28,7 @@ class BudgetTimeManager {
             
         case "Quarterly":
             budgetEndingDate = (budgetInitialDate + 15.days)
-            let hours = budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .hour)
+            let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
             if hours > 24 {
                 remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
             } else {
@@ -36,7 +37,7 @@ class BudgetTimeManager {
             
         case "Monthly":
             budgetEndingDate = (budgetInitialDate + 1.months)
-            let hours = budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .hour)
+            let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
             if hours > 24 {
                 remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
             } else {
