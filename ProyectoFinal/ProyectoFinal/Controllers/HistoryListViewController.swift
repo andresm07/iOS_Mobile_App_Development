@@ -27,6 +27,14 @@ class HistoryListViewController: UIViewController {
         
         registerCustomCells()
         
+        do {
+            let userDefaults = UserDefaults.standard
+            let decoded = userDefaults.object(forKey: "Active User") as! Data
+            self.currentUser = try ((NSKeyedUnarchiver.unarchivedObject(ofClasses: [User.self], from: decoded)) as? User)
+        } catch {
+            print("Error Loading Active User")
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +42,8 @@ class HistoryListViewController: UIViewController {
     }
     
     private func updateBudgetList() {
-        let budgets = self.realmManager.getAllBudgets()
+        //let budgets = self.realmManager.getAllBudgets()
+        let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {

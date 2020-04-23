@@ -156,7 +156,7 @@ class RealmManager {
     
     public func getAllUserBudgets(user: User) -> Results<Budget>? {
         let realm = try? Realm()
-        let searchPredicate = NSPredicate(format: "name = %@", user.name)
+        let searchPredicate = NSPredicate(format: "identifier = %@ AND name = %@", user.identifier, user.name)
         return realm?.objects(Budget.self).filter(searchPredicate)
     }
     

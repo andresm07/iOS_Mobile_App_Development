@@ -30,6 +30,15 @@ class BudgetListViewController: UIViewController {
         addBudgetNavitationButton()
         addLogoutNavigationButton()
         getBudgets()
+        
+        do {
+            let userDefaults = UserDefaults.standard
+            let decoded = userDefaults.object(forKey: "Active User") as! Data
+            self.currentUser = try ((NSKeyedUnarchiver.unarchivedObject(ofClasses: [User.self], from: decoded)) as? User)
+        } catch {
+            print("Error Loading Active User")
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +46,8 @@ class BudgetListViewController: UIViewController {
     }
     
     private func updateBudgetList() {
-        let budgets = self.realmManager.getAllBudgets()
+        //let budgets = self.realmManager.getAllBudgets()
+        let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {
@@ -68,14 +78,12 @@ class BudgetListViewController: UIViewController {
     }
     
     @objc func addLogoutAction(sender: UIBarButtonItem) {
-        if let loginViewController = storyboard?.instantiateViewController(identifier: R.storyboard.main.loginViewController.identifier) as? LoginViewController {
-            navigationController?.pushViewController(loginViewController, animated: true)
-            //self.navigationController?.viewControllers.removeAll()
-        }
+        self.tabBarController?.dismiss(animated: true, completion: nil)
     }
     
     private func getBudgets() {
-        let budgets = self.realmManager.getAllBudgets()
+        //let budgets = self.realmManager.getAllBudgets()
+        let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             self.realmManager.insertBudget(name: "Peru", periodicity: "Monthly", initialAmount: 0.0, rollover: true)
             self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0, rollover: false)
