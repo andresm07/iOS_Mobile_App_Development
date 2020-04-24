@@ -20,12 +20,10 @@ class ConfigurationViewController: UIViewController {
         
         self.appVersionLabel.text = "\(Bundle.main.appName) v \(Bundle.main.versionNumber) (Build \(Bundle.main.buildNumber))"
         
-        do {
-            let userDefaults = UserDefaults.standard
-            let decoded = userDefaults.object(forKey: "Active User") as! Data
-            self.currentUser = try ((NSKeyedUnarchiver.unarchivedObject(ofClasses: [User.self], from: decoded)) as? User)
-        } catch {
-            print("Error Loading Active User")
+        let userDefaults = UserDefaults.standard
+        let activeUser = self.realmManager.getUser(username: userDefaults.object(forKey: "Username") as! String)?.first
+        if activeUser != nil {
+            self.currentUser = activeUser
         }
         
     }

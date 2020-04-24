@@ -131,14 +131,14 @@ class RealmManager {
         }
     }
     
-    public func getUser(username: String, password: String) -> Results<User>? {
+    public func getUser(username: String) -> Results<User>? {
         let realm = try? Realm()
-        let searchPredicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
+        let searchPredicate = NSPredicate(format: "username = %@", username)
         return realm?.objects(User.self).filter(searchPredicate)
     }
     
-    public func getUser(username: String, password: String, completionHandler:(_ user: Results<User>?) -> Void) {
-        completionHandler(getUser(username: username, password: password))
+    public func getUser(username: String, completionHandler:(_ user: Results<User>?) -> Void) {
+        completionHandler(getUser(username: username))
     }
     
     public func deleteUserBudgets(user: User) {
@@ -156,7 +156,7 @@ class RealmManager {
     
     public func getAllUserBudgets(user: User) -> Results<Budget>? {
         let realm = try? Realm()
-        let searchPredicate = NSPredicate(format: "identifier = %@ AND name = %@", user.identifier, user.name)
+        let searchPredicate = NSPredicate(format: "budget.owners.first.name = %@ AND budget.owners.first.username = %@", user.name, user.username)
         return realm?.objects(Budget.self).filter(searchPredicate)
     }
     

@@ -53,15 +53,8 @@ class LoginViewController: UIViewController {
         if let username = self.usernameTextField.text, username.count > 0, let password = self.passwordTextField.text, password.count > 0 {
             if realmManager.validateLogin(username: username, password: password) {
                 if let tabBarController = storyboard?.instantiateViewController(identifier: R.storyboard.main.tabBarViewController.identifier) {
-                    let user = self.realmManager.getUser(username: username, password: password)
-                    do {
-                        let encodedUser = try NSKeyedArchiver.archivedData(withRootObject: (user?.first!)!, requiringSecureCoding: false)
-                        let userDefaults = UserDefaults.standard
-                        userDefaults.set(encodedUser, forKey: "Active User")
-                        userDefaults.synchronize()
-                    } catch {
-                        print("Error Saving Active User")
-                    }
+                    let userDefaults = UserDefaults.standard
+                    userDefaults.set(username, forKey: "Username")
                     self.usernameTextField.text = nil
                     self.passwordTextField.text = nil
                     tabBarController.modalPresentationStyle = .fullScreen

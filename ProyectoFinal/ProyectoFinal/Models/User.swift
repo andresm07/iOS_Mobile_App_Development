@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class User: Object, NSCoding {
+class User: Object {
     
     @objc dynamic var identifier = NSUUID().uuidString
     @objc dynamic var name = ""
@@ -33,19 +33,4 @@ class User: Object, NSCoding {
         return ["identifier"]
     }
     
-    required convenience init(coder aDecoder: NSCoder) {
-        let identifier = aDecoder.decodeObject(forKey: "identifier") as! String
-        let name = aDecoder.decodeObject(forKey: "name") as! String
-        let username = aDecoder.decodeObject(forKey: "username") as! String
-        let password = aDecoder.decodeObject(forKey: "password") as! String
-        self.init(name: name, username: username, password: password)
-        
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.identifier, forKey: "identifier")
-        aCoder.encode(self.name, forKey: "name")
-        aCoder.encode(self.username, forKey: "username")
-        aCoder.encode(self.password, forKey: "password")
-    }
 }

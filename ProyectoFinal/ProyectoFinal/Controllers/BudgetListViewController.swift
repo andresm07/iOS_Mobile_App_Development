@@ -29,15 +29,14 @@ class BudgetListViewController: UIViewController {
         registerCustomCells()
         addBudgetNavitationButton()
         addLogoutNavigationButton()
-        getBudgets()
         
-        do {
-            let userDefaults = UserDefaults.standard
-            let decoded = userDefaults.object(forKey: "Active User") as! Data
-            self.currentUser = try ((NSKeyedUnarchiver.unarchivedObject(ofClasses: [User.self], from: decoded)) as? User)
-        } catch {
-            print("Error Loading Active User")
+        let userDefaults = UserDefaults.standard
+        let activeUser = self.realmManager.getUser(username: userDefaults.object(forKey: "Username") as! String)?.first
+        if activeUser != nil {
+            self.currentUser = activeUser
         }
+        
+        getBudgets()
         
     }
     
@@ -46,8 +45,8 @@ class BudgetListViewController: UIViewController {
     }
     
     private func updateBudgetList() {
-        //let budgets = self.realmManager.getAllBudgets()
-        let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
+        let budgets = self.realmManager.getAllBudgets()
+        //let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {
@@ -82,8 +81,8 @@ class BudgetListViewController: UIViewController {
     }
     
     private func getBudgets() {
-        //let budgets = self.realmManager.getAllBudgets()
-        let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
+        let budgets = self.realmManager.getAllBudgets()
+        //let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             self.realmManager.insertBudget(name: "Peru", periodicity: "Monthly", initialAmount: 0.0, rollover: true)
             self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0, rollover: false)

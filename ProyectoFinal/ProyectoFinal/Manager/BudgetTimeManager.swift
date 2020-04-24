@@ -54,4 +54,5 @@ class BudgetTimeManager {
         var timeRemaining = ""
         return timeRemaining
     }
+    
 }
