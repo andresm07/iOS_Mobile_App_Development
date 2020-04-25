@@ -15,17 +15,27 @@ class BudgetRolloverManager {
     
     public class func restartBudgetWithRollover(budget: Budget) {
         let hasRollover: Bool = budget.rollover
+        let currentDate: Date = Date()
         var budgetEndingDate: Date
         if hasRollover {
             switch budget.periodicity {
             case "Weekly":
                 budgetEndingDate = budget.initialDate + 7.days
+                if budgetEndingDate == currentDate {
+                    
+                }
                 
             case "Quarterly":
                 budgetEndingDate = budget.initialDate + 15.days
+                if budgetEndingDate == currentDate {
+                    
+                }
                 
             case "Monthly":
                 budgetEndingDate = budget.initialDate + 1.months
+                if budgetEndingDate == currentDate {
+                    
+                }
                 
             default:
                 print("")
@@ -35,17 +45,27 @@ class BudgetRolloverManager {
     
     public class func restartBudgetWithoutRollover(budget: Budget) {
         let hasRollover: Bool = budget.rollover
+        let currentDate: Date = Date()
         var budgetEndingDate: Date
         if !hasRollover {
             switch budget.periodicity {
             case "Weekly":
                 budgetEndingDate = budget.initialDate + 7.days
+                if budgetEndingDate == currentDate {
+                    
+                }
                 
             case "Quarterly":
                 budgetEndingDate = budget.initialDate + 15.days
+                if budgetEndingDate == currentDate {
+                    
+                }
                 
             case "Monthly":
                 budgetEndingDate = budget.initialDate + 1.months
+                if budgetEndingDate == currentDate {
+                    
+                }
                 
             default:
                 print("")
