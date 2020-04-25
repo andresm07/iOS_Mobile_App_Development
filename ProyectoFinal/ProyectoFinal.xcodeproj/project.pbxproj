@@ -39,6 +39,8 @@
 		84A5AAAC244D2B2F004355D5 /* BudgetTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */; };
 		84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */; };
 		84A5AAB0244E8D4A004355D5 /* Build+VersionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */; };
+		84A5AAB52453A525004355D5 /* Results+ToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAB42453A525004355D5 /* Results+ToArray.swift */; };
+		84A5AAB72453BD46004355D5 /* BudgetRolloverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAB62453BD46004355D5 /* BudgetRolloverManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTimeManager.swift; sourceTree = "<group>"; };
 		84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Build+VersionFormatter.swift"; sourceTree = "<group>"; };
+		84A5AAB42453A525004355D5 /* Results+ToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+ToArray.swift"; sourceTree = "<group>"; };
+		84A5AAB62453BD46004355D5 /* BudgetRolloverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRolloverManager.swift; sourceTree = "<group>"; };
 		D55B41C6FD772708081A90F0 /* Pods-ProyectoFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinal.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFinal/Pods-ProyectoFinal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,7 @@
 				848FE83C2449110A00522AF3 /* Date+ToString.swift */,
 				848FE83E2449112E00522AF3 /* String+FloatValue.swift */,
 				84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */,
+				84A5AAB42453A525004355D5 /* Results+ToArray.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			children = (
 				8436E206244822F600F1CE83 /* RealmManager.swift */,
 				84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */,
+				84A5AAB62453BD46004355D5 /* BudgetRolloverManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -384,11 +390,13 @@
 				8436E1FD24480F8200F1CE83 /* TabBarViewController.swift in Sources */,
 				8436E1D6244807A000F1CE83 /* LoginViewController.swift in Sources */,
 				848FE83F2449112E00522AF3 /* String+FloatValue.swift in Sources */,
+				84A5AAB72453BD46004355D5 /* BudgetRolloverManager.swift in Sources */,
 				8436E2042448227500F1CE83 /* R.generated.swift in Sources */,
 				8436E1E224480A1300F1CE83 /* AddExpensesTableViewController.swift in Sources */,
 				8436E1EE24480AF600F1CE83 /* Date+Formatter.swift in Sources */,
 				8436E1F224480B5700F1CE83 /* TransactionTableViewCell.swift in Sources */,
 				84784C532447A39B0032D5E2 /* AppDelegate.swift in Sources */,
+				84A5AAB52453A525004355D5 /* Results+ToArray.swift in Sources */,
 				8436E1DC244808FD00F1CE83 /* AddBudgetTableViewController.swift in Sources */,
 				8436E1E624480AA000F1CE83 /* BudgetTableViewCell.swift in Sources */,
 				8436E1D42448077000F1CE83 /* ConfigurationViewController.swift in Sources */,

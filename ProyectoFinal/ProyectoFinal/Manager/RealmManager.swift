@@ -95,6 +95,18 @@ class RealmManager {
         }
     }
     
+    public func updateBudgetNameAndRollover(budget: Budget, name: String, rollover: Bool) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                budget.name = name
+                budget.rollover = rollover
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
+    
     public func validateLogin(username: String, password: String) -> Bool{
         var found = false
         do {
@@ -139,6 +151,16 @@ class RealmManager {
     
     public func getUser(username: String, completionHandler:(_ user: Results<User>?) -> Void) {
         completionHandler(getUser(username: username))
+    }
+    
+    public func getBudget(identifier: String, name: String) -> Results<Budget>? {
+        let realm = try? Realm()
+        let searchPredicate = NSPredicate(format: "identifier = %@ AND name = %@", identifier, name)
+        return realm?.objects(Budget.self).filter(searchPredicate)
+    }
+    
+    public func getBudget(identifier: String, name: String, completionHandler:(_ budget: Results<Budget>?) -> Void) {
+        completionHandler(getBudget(identifier: identifier, name: name))
     }
     
     public func deleteUserBudgets(user: User) {

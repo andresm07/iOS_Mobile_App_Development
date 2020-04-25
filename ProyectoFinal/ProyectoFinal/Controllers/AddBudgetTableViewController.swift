@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddBudgetTableViewControllerProtocol: class {
-    func addBudget(budget: Budget)
+    func addBudget(user: User, budget: Budget)
 }
 
 class AddBudgetTableViewController: UITableViewController {
@@ -20,10 +20,12 @@ class AddBudgetTableViewController: UITableViewController {
     @IBOutlet weak var startDatePickerTextField: UITextField!
     @IBOutlet weak var initialAmoutTextField: UITextField!
     @IBOutlet weak var rolloverSwitch: UISwitch!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     weak var delegate: AddBudgetTableViewControllerProtocol?
     
     var budget: Budget?
+    let realmManager = RealmManager()
     let periodicityPickerView = UIPickerView()
     let periodicityOptions = ["Weekly", "Quarterly", "Monthly"]
     var selectedPeriodicity: String?
@@ -38,6 +40,7 @@ class AddBudgetTableViewController: UITableViewController {
         showDatePicker()
         
         if let budget = self.budget {
+            self.userNameLabel.text = "Edit Budget"
             self.budgetNameTextField.text = budget.name
             //self.budgetNameTextField.isUserInteractionEnabled = false
             self.budgetPeriodicityPickerTextField.text = budget.periodicity
@@ -48,14 +51,37 @@ class AddBudgetTableViewController: UITableViewController {
             self.initialAmoutTextField.isUserInteractionEnabled = false
             self.rolloverSwitch.setOn(budget.rollover, animated: true)
             //self.rolloverSwitch.isUserInteractionEnabled = false
+            editBudgetNavigationButton()
         } else {
+            self.userNameLabel.text = "Add New Budget"
             saveBudgetNavitagionButton()
         }
+        
     }
     
     
     @IBAction func rolloverSwitchAction(_ sender: UISwitch) {
         
+    }
+    
+    private func editBudgetNavigationButton() {
+        let editBudgetNavigationButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBudgetAction(sender:)))
+        navigationItem.rightBarButtonItem = editBudgetNavigationButton
+    }
+    
+    @objc func editBudgetAction(sender: UIBarButtonItem) {
+        let budgetIdentifier: String = self.budget!.identifier
+        let budgetName: String = self.budget!.name
+        let activeBudget = self.realmManager.getBudget(identifier: budgetIdentifier, name: budgetName)?.first
+        if let newBudgetName = self.budgetNameTextField.text, newBudgetName.count > 0 {
+            self.realmManager.updateBudgetNameAndRollover(budget: activeBudget!, name: newBudgetName, rollover: self.rolloverSwitch.isOn)
+            navigationController?.popViewController(animated: true)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "Fill out budget name", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     private func saveBudgetNavitagionButton() {
@@ -64,9 +90,11 @@ class AddBudgetTableViewController: UITableViewController {
     }
     
     @objc func saveBudgetAction(sender: UIBarButtonItem) {
-        if let budgetName = self.budgetNameTextField.text, budgetName.count > 0 {
-            let budget = Budget(name: budgetName, periodicity: self.budgetPeriodicityPickerTextField.text!, initialAmount: self.initialAmoutTextField.text!.floatValue, rollover: self.rolloverSwitch.isOn)
-            self.delegate?.addBudget(budget: budget)
+        if let budgetName = self.budgetNameTextField.text, budgetName.count > 0, let budgetPeriodicity = self.budgetPeriodicityPickerTextField.text, budgetPeriodicity.count > 0, let budgetInitialAmountText = self.initialAmoutTextField.text, budgetInitialAmountText.count > 0 {
+            let budget = Budget(name: budgetName, periodicity: budgetPeriodicity, initialAmount: budgetInitialAmountText.floatValue, rollover: self.rolloverSwitch.isOn)
+            let userDefaults = UserDefaults.standard
+            let activeUser = (self.realmManager.getUser(username: userDefaults.object(forKey: "Username") as! String)?.first)!
+            self.delegate?.addBudget(user: activeUser, budget: budget)
         } else {
             let alertController = UIAlertController(title: "Error", message: "Fill out data", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)

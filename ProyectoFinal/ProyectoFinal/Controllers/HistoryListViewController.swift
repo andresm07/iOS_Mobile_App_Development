@@ -15,7 +15,7 @@ class HistoryListViewController: UIViewController {
     
     let budgetTableViewHeaderIdentifier = "BudgetTableViewHeader"
     let transactionTableViewCellIdentifier = "TransactionTableViewCell"
-    var budgets: Results<Budget>?
+    var budgets: [Budget]?
     var currentUser: User?
     let realmManager = RealmManager()
     
@@ -45,7 +45,14 @@ class HistoryListViewController: UIViewController {
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {
-            self.budgets = budgets
+            var userBudgets = [Budget]()
+            budgets?.forEach { budget in
+                if budget.owners.first?.username == self.currentUser?.username {
+                    userBudgets.append(budget)
+                }
+            }
+            self.budgets = userBudgets
+            //self.budgets = (budgets?.toArray(ofType: Budget.self))! as [Budget]
             self.historyListTableView.reloadData()
         }
     }

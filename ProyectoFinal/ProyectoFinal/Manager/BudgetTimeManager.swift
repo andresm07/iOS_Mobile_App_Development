@@ -19,29 +19,35 @@ class BudgetTimeManager {
         switch budget.periodicity {
         case "Weekly":
             budgetEndingDate = (budgetInitialDate + 7.days)
-            let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
-            if hours > 24 {
-                remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
-            } else {
-                remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
+            if budgetEndingDate < currentDate {
+                let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
+                if hours > 24 {
+                    remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
+                } else {
+                    remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
+                }
             }
             
         case "Quarterly":
             budgetEndingDate = (budgetInitialDate + 15.days)
-            let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
-            if hours > 24 {
-                remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
-            } else {
-                remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
+            if budgetEndingDate < currentDate {
+                let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
+                if hours > 24 {
+                    remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
+                } else {
+                    remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
+                }
             }
             
         case "Monthly":
             budgetEndingDate = (budgetInitialDate + 1.months)
-            let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
-            if hours > 24 {
-                remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
-            } else {
-                remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
+            if budgetEndingDate < currentDate {
+                let hours = currentDate.getInterval(toDate: budgetEndingDate, component: .hour)
+                if hours > 24 {
+                    remainingDays = "\(String(budgetInitialDate.getInterval(toDate: budgetEndingDate, component: .day))) days"
+                } else {
+                    remainingDays = getTimerCountdown(budgetInitialDate: budgetInitialDate, budgetEndingDate: budgetEndingDate)
+                }
             }
 
         default:

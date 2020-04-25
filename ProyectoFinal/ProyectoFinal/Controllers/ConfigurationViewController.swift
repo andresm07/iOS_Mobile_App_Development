@@ -28,8 +28,18 @@ class ConfigurationViewController: UIViewController {
         
     }
     
-
+    
     @IBAction func deleteDatabaseAction(_ sender: Any) {
-        self.realmManager.deleteUserBudgets(user: self.currentUser!)
-    }
+        let confirmationAlertController = UIAlertController(title: "Delete App Data?", message: "All data will be lost.", preferredStyle: .alert)
+            confirmationAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                self.realmManager.deleteUserBudgets(user: self.currentUser!)
+                print("OK")
+            }))
+            confirmationAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Cancel")
+            }))
+            present(confirmationAlertController, animated: true, completion: nil)
+        }
 }
+    
+

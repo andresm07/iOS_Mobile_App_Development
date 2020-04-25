@@ -14,7 +14,7 @@ class BudgetListViewController: UIViewController {
     @IBOutlet weak var budgetListTableView: UITableView!
     
     let budgetTableViewCellIdentifier = "BudgetTableViewCell"
-    var budgets: Results<Budget>?
+    var budgets: [Budget]?
     var currentUser: User?
     let realmManager = RealmManager()
     
@@ -50,11 +50,18 @@ class BudgetListViewController: UIViewController {
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {
-            self.budgets = budgets
+            var userBudgets = [Budget]()
+            budgets?.forEach { budget in
+                if budget.owners.first?.username == self.currentUser?.username {
+                    userBudgets.append(budget)
+                }
+            }
+            self.budgets = userBudgets
+            //self.budgets = (budgets?.toArray(ofType: Budget.self))! as [Budget]
             self.budgetListTableView.reloadData()
         }
     }
-    
+
     private func registerCustomCells() {
         self.budgetListTableView.register(UINib(resource: R.nib.budgetTableViewCell), forCellReuseIdentifier: R.nib.budgetTableViewCell.name)
     }
@@ -88,7 +95,14 @@ class BudgetListViewController: UIViewController {
             self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0, rollover: false)
             getBudgets()
         } else {
-            self.budgets = budgets
+            var userBudgets = [Budget]()
+            budgets?.forEach { budget in
+                if budget.owners.first?.username == self.currentUser?.username {
+                    userBudgets.append(budget)
+                }
+            }
+            self.budgets = userBudgets
+            //self.budgets = (budgets?.toArray(ofType: Budget.self))! as [Budget]
             self.budgetListTableView.reloadData()
         }
     }
@@ -96,8 +110,9 @@ class BudgetListViewController: UIViewController {
 }
 
 extension BudgetListViewController: AddBudgetTableViewControllerProtocol {
-    func addBudget(budget: Budget) {
-        self.realmManager.insertBudget(name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
+    func addBudget(user: User, budget: Budget) {
+        //self.realmManager.insertBudget(name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
+        self.realmManager.addBudgetToUser(user: user, name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
         navigationController?.popViewController(animated: true)
         self.budgetListTableView.reloadData()
     }
