@@ -141,6 +141,7 @@ class VisualizeBudgetTableViewController: UITableViewController {
         } else {
             if let timer = self.timer {
                 timer.invalidate()
+                self.daysRemainingLabel.text = "Budget Restarting"
                 self.timer = nil
             }
         }
