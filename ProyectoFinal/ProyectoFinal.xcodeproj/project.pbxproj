@@ -36,7 +36,6 @@
 		848FE83D2449110A00522AF3 /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83C2449110A00522AF3 /* Date+ToString.swift */; };
 		848FE83F2449112E00522AF3 /* String+FloatValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83E2449112E00522AF3 /* String+FloatValue.swift */; };
 		848FE8412449195000522AF3 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */; };
-		84A5AAAC244D2B2F004355D5 /* BudgetTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */; };
 		84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */; };
 		84A5AAB0244E8D4A004355D5 /* Build+VersionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */; };
 		84A5AAB52453A525004355D5 /* Results+ToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAB42453A525004355D5 /* Results+ToArray.swift */; };
@@ -76,7 +75,6 @@
 		848FE83C2449110A00522AF3 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		848FE83E2449112E00522AF3 /* String+FloatValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FloatValue.swift"; sourceTree = "<group>"; };
 		848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
-		84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTimeManager.swift; sourceTree = "<group>"; };
 		84A5AAAD244D3AB6004355D5 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Build+VersionFormatter.swift"; sourceTree = "<group>"; };
 		84A5AAB42453A525004355D5 /* Results+ToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+ToArray.swift"; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				8436E206244822F600F1CE83 /* RealmManager.swift */,
-				84A5AAAB244D2B2F004355D5 /* BudgetTimeManager.swift */,
 				84A5AAB62453BD46004355D5 /* BudgetRolloverManager.swift */,
 			);
 			path = Manager;
@@ -405,7 +402,6 @@
 				8436E1FF24481A3700F1CE83 /* BudgetListViewController.swift in Sources */,
 				84A5AAAE244D3AB6004355D5 /* RegistrationViewController.swift in Sources */,
 				84784C552447A39B0032D5E2 /* SceneDelegate.swift in Sources */,
-				84A5AAAC244D2B2F004355D5 /* BudgetTimeManager.swift in Sources */,
 				8436E207244822F600F1CE83 /* RealmManager.swift in Sources */,
 				8436E1E0244809FC00F1CE83 /* AddMoneyTableViewController.swift in Sources */,
 				8436E20124481A4700F1CE83 /* HistoryListViewController.swift in Sources */,

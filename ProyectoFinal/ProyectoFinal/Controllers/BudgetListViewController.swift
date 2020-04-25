@@ -20,8 +20,6 @@ class BudgetListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         self.budgetListTableView.delegate = self
         self.budgetListTableView.dataSource = self
@@ -46,7 +44,6 @@ class BudgetListViewController: UIViewController {
     
     private func updateBudgetList() {
         let budgets = self.realmManager.getAllBudgets()
-        //let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {
@@ -57,7 +54,6 @@ class BudgetListViewController: UIViewController {
                 }
             }
             self.budgets = userBudgets
-            //self.budgets = (budgets?.toArray(ofType: Budget.self))! as [Budget]
             self.budgetListTableView.reloadData()
         }
     }
@@ -89,7 +85,6 @@ class BudgetListViewController: UIViewController {
     
     private func getBudgets() {
         let budgets = self.realmManager.getAllBudgets()
-        //let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             self.realmManager.insertBudget(name: "Peru", periodicity: "Monthly", initialAmount: 0.0, rollover: true)
             self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0, rollover: false)
@@ -102,7 +97,6 @@ class BudgetListViewController: UIViewController {
                 }
             }
             self.budgets = userBudgets
-            //self.budgets = (budgets?.toArray(ofType: Budget.self))! as [Budget]
             self.budgetListTableView.reloadData()
         }
     }
@@ -111,7 +105,6 @@ class BudgetListViewController: UIViewController {
 
 extension BudgetListViewController: AddBudgetTableViewControllerProtocol {
     func addBudget(user: User, budget: Budget) {
-        //self.realmManager.insertBudget(name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
         self.realmManager.addBudgetToUser(user: user, name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
         navigationController?.popViewController(animated: true)
         self.budgetListTableView.reloadData()
@@ -146,21 +139,6 @@ extension BudgetListViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(visualizeBudgetTableViewController, animated: true)
         }
     }
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            if let budget = self.budgets?[indexPath.row] {
-//                self.realmManager.deleteBudget(budget: budget)
-//                self.budgetListTableView.beginUpdates()
-//                self.budgetListTableView.deleteRows(at: [indexPath], with: .fade)
-//                self.budgetListTableView.endUpdates()
-//            }
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         

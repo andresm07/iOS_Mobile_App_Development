@@ -42,7 +42,6 @@ class AddBudgetTableViewController: UITableViewController {
         if let budget = self.budget {
             self.userNameLabel.text = "Edit Budget"
             self.budgetNameTextField.text = budget.name
-            //self.budgetNameTextField.isUserInteractionEnabled = false
             self.budgetPeriodicityPickerTextField.text = budget.periodicity
             self.budgetPeriodicityPickerTextField.isUserInteractionEnabled = false
             self.startDatePickerTextField.text = budget.initialDate.toString(dateFormat: "dd/MM/yyyy")
@@ -50,7 +49,6 @@ class AddBudgetTableViewController: UITableViewController {
             self.initialAmoutTextField.text = String(budget.amount)
             self.initialAmoutTextField.isUserInteractionEnabled = false
             self.rolloverSwitch.setOn(budget.rollover, animated: true)
-            //self.rolloverSwitch.isUserInteractionEnabled = false
             editBudgetNavigationButton()
         } else {
             self.userNameLabel.text = "Add New Budget"

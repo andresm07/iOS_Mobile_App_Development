@@ -19,11 +19,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getUsers()
+        getUsers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //updateUserList()
+        updateUserList()
     }
     
     private func getUsers() {

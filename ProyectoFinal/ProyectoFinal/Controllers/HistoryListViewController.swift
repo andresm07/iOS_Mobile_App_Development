@@ -41,7 +41,6 @@ class HistoryListViewController: UIViewController {
     
     private func updateBudgetList() {
         let budgets = self.realmManager.getAllBudgets()
-        //let budgets = self.realmManager.getAllUserBudgets(user: self.currentUser!)
         if let budgets = budgets, budgets.isEmpty {
             updateBudgetList()
         } else {
@@ -52,7 +51,6 @@ class HistoryListViewController: UIViewController {
                 }
             }
             self.budgets = userBudgets
-            //self.budgets = (budgets?.toArray(ofType: Budget.self))! as [Budget]
             self.historyListTableView.reloadData()
         }
     }
@@ -61,7 +59,6 @@ class HistoryListViewController: UIViewController {
         self.historyListTableView.register(UINib(resource: R.nib.transactionTableViewCell), forCellReuseIdentifier: R.nib.transactionTableViewCell.name)
         self.historyListTableView.register(UINib(resource: R.nib.budgetTableViewHeader), forHeaderFooterViewReuseIdentifier: R.nib.budgetTableViewHeader.name)
     }
-    
     
 }
 
@@ -79,6 +76,9 @@ extension HistoryListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let cell = self.historyListTableView.dequeueReusableCell(withIdentifier: self.transactionTableViewCellIdentifier) as? TransactionTableViewCell else
         {
             return UITableViewCell()
+        }
+        if self.budgets?[indexPath.section].transactions[indexPath.row].type == "Rollover" {
+            cell.backgroundColor = UIColor(red: (255.0/255.0), green: (219.0/255.0), blue: (5.0/255.0), alpha: 0.7)
         }
         cell.setupCell(transaction: (self.budgets?[indexPath.section].transactions[indexPath.row])!)
         return cell

@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
+import SwiftDate
 
 class TabBarViewController: UITabBarController {
+    
+    var budgets: Results<Budget>?
+    let realmManager = RealmManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +24,27 @@ class TabBarViewController: UITabBarController {
     }
     
     @objc func didBecomeActive() {
-        //significa que el app viene de background
+        updateBudgetList()
+        self.budgets?.forEach { budget in
+            if budget.rollover {
+                BudgetRolloverManager.restartBudgetWithRollover(budget: budget)
+            } else if !budget.rollover {
+                BudgetRolloverManager.restartBudgetWithoutRollover(budget: budget)
+            }
+        }
     }
     
     @objc func didEnterBackground() {
         
-        //significa que el app vara para background
+    }
+    
+    private func updateBudgetList() {
+        let budgets = self.realmManager.getAllBudgets()
+        if let budgets = budgets, budgets.isEmpty {
+            updateBudgetList()
+        } else {
+            self.budgets = budgets
+        }
     }
     
 }

@@ -186,12 +186,40 @@ class RealmManager {
         completionHandler(getAllUserBudgets(user: user))
     }
     
+    public func usernameExists(username: String) -> Results<User>? {
+        let realm = try? Realm()
+        let searchPredicate = NSPredicate(format: "username = %@", username)
+        return realm?.objects(User.self).filter(searchPredicate)
+    }
+    
+    public func usernameExists(username: String, completionHandler:(_ user: Results<User>?) -> Void) {
+        completionHandler(usernameExists(username: username))
+    }
+    
     public func addBudgetToUser(user: User, name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
         let budget = Budget(name: name, periodicity: periodicity, initialAmount: initialAmount, rollover: rollover)
         do {
             let realm = try Realm()
             try realm.write {
                 user.budgets.append(budget)
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
+    
+    public func restartBudget(budget: Budget, name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                budget.name = name
+                budget.periodicity = periodicity
+                budget.initialAmount = initialAmount
+                budget.amount = initialAmount
+                budget.initialDate = Date()
+                budget.rollover = rollover
+                let transaction = Transaction(detail: "Budget Restart", amount: initialAmount, type: "Rollover")
+                budget.transactions.append(transaction)
             }
         } catch {
             print("Realm Error")
