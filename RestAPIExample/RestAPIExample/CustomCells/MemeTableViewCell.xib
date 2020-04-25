@@ -15,8 +15,48 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HFk-d4-AvQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-34-S4v">
+                        <rect key="frame" x="8" y="8" width="304" height="234"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gP-dZ-0oP">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30R-uO-3sJ">
+                                <rect key="frame" x="0.0" y="20.5" width="304" height="193"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbb-KM-Ntp">
+                                <rect key="frame" x="0.0" y="213.5" width="304" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HFk-d4-AvQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0zs-xm-5xY"/>
+                    <constraint firstAttribute="bottom" secondItem="HFk-d4-AvQ" secondAttribute="bottom" id="CHf-mf-OyT"/>
+                    <constraint firstItem="Ta0-34-S4v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="N8K-w6-Lpo"/>
+                    <constraint firstAttribute="bottom" secondItem="Ta0-34-S4v" secondAttribute="bottom" constant="8" id="d1c-MQ-sfN"/>
+                    <constraint firstItem="Ta0-34-S4v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="f3l-an-xS9"/>
+                    <constraint firstItem="HFk-d4-AvQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fsV-dv-mUV"/>
+                    <constraint firstAttribute="trailing" secondItem="Ta0-34-S4v" secondAttribute="trailing" constant="8" id="qIs-5z-QFq"/>
+                    <constraint firstAttribute="trailing" secondItem="HFk-d4-AvQ" secondAttribute="trailing" id="wwD-n5-IcY"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="memeBottomTextLabel" destination="Hbb-KM-Ntp" id="cZW-0b-Hi3"/>
+                <outlet property="memeImageView" destination="HFk-d4-AvQ" id="QEi-aL-ea5"/>
+                <outlet property="memeTopTextLabel" destination="8gP-dZ-0oP" id="x26-Qj-klj"/>
+            </connections>
             <point key="canvasLocation" x="133" y="111"/>
         </tableViewCell>
     </objects>

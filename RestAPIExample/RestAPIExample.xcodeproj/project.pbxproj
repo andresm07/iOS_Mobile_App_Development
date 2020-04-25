@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		346879B4A788B3E73A0F9173 /* Pods_RestAPIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6C26A879095AE0D86F72F8 /* Pods_RestAPIExample.framework */; };
+		84A5AAB924548C51004355D5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5AAB824548C51004355D5 /* R.generated.swift */; };
 		84E061E8244B4FC400ED3FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E061E7244B4FC400ED3FE7 /* AppDelegate.swift */; };
 		84E061EA244B4FC400ED3FE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E061E9244B4FC400ED3FE7 /* SceneDelegate.swift */; };
 		84E061EF244B4FC400ED3FE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E061ED244B4FC400ED3FE7 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		84E06202244B570F00ED3FE7 /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E06201244B570F00ED3FE7 /* MemeViewController.swift */; };
 		84E06205244B581100ED3FE7 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E06203244B581100ED3FE7 /* MemeTableViewCell.swift */; };
 		84E06206244B581100ED3FE7 /* MemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E06204244B581100ED3FE7 /* MemeTableViewCell.xib */; };
-		84E06209244B58BD00ED3FE7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E06208244B58BD00ED3FE7 /* R.generated.swift */; };
 		84E0620C244B61B300ED3FE7 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0620B244B61B300ED3FE7 /* Meme.swift */; };
 		84E0620E244B644400ED3FE7 /* MemeAPIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0620D244B644400ED3FE7 /* MemeAPIErrors.swift */; };
 		84E06211244B64B600ED3FE7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E06210244B64B600ED3FE7 /* APIManager.swift */; };
@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		3EE57518C9AD24DCE7DF7B2D /* Pods-RestAPIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIExample.release.xcconfig"; path = "Target Support Files/Pods-RestAPIExample/Pods-RestAPIExample.release.xcconfig"; sourceTree = "<group>"; };
 		6C9ACE0681E5062F664E5F8E /* Pods-RestAPIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIExample.debug.xcconfig"; path = "Target Support Files/Pods-RestAPIExample/Pods-RestAPIExample.debug.xcconfig"; sourceTree = "<group>"; };
+		84A5AAB824548C51004355D5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		84E061E4244B4FC400ED3FE7 /* RestAPIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E061E7244B4FC400ED3FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E061E9244B4FC400ED3FE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		84E06201244B570F00ED3FE7 /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
 		84E06203244B581100ED3FE7 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
 		84E06204244B581100ED3FE7 /* MemeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemeTableViewCell.xib; sourceTree = "<group>"; };
-		84E06208244B58BD00ED3FE7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		84E0620B244B61B300ED3FE7 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		84E0620D244B644400ED3FE7 /* MemeAPIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeAPIErrors.swift; sourceTree = "<group>"; };
 		84E06210244B64B600ED3FE7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -59,6 +59,7 @@
 		84E061DB244B4FC400ED3FE7 = {
 			isa = PBXGroup;
 			children = (
+				84A5AAB824548C51004355D5 /* R.generated.swift */,
 				84E061E6244B4FC400ED3FE7 /* RestAPIExample */,
 				84E061E5244B4FC400ED3FE7 /* Products */,
 				A1E72A34274BF6A5631CA4E9 /* Pods */,
@@ -77,17 +78,16 @@
 		84E061E6244B4FC400ED3FE7 /* RestAPIExample */ = {
 			isa = PBXGroup;
 			children = (
-				84E06208244B58BD00ED3FE7 /* R.generated.swift */,
-				84E0620F244B64A100ED3FE7 /* Managers */,
-				84E0620A244B61A400ED3FE7 /* Models */,
-				84E06200244B565100ED3FE7 /* Storyboards */,
+				84E061E7244B4FC400ED3FE7 /* AppDelegate.swift */,
+				84E061F0244B4FC700ED3FE7 /* Assets.xcassets */,
 				84E061FF244B564C00ED3FE7 /* Controllers */,
 				84E061FE244B561D00ED3FE7 /* CustomCells */,
 				84E061FB244B522500ED3FE7 /* Helpers */,
-				84E061E7244B4FC400ED3FE7 /* AppDelegate.swift */,
-				84E061E9244B4FC400ED3FE7 /* SceneDelegate.swift */,
-				84E061F0244B4FC700ED3FE7 /* Assets.xcassets */,
 				84E061F5244B4FC700ED3FE7 /* Info.plist */,
+				84E0620F244B64A100ED3FE7 /* Managers */,
+				84E0620A244B61A400ED3FE7 /* Models */,
+				84E061E9244B4FC400ED3FE7 /* SceneDelegate.swift */,
+				84E06200244B565100ED3FE7 /* Storyboards */,
 			);
 			path = RestAPIExample;
 			sourceTree = "<group>";
@@ -298,13 +298,13 @@
 			files = (
 				84E061FD244B524A00ED3FE7 /* AlamofireHelper.swift in Sources */,
 				84E0620E244B644400ED3FE7 /* MemeAPIErrors.swift in Sources */,
+				84A5AAB924548C51004355D5 /* R.generated.swift in Sources */,
 				84E061E8244B4FC400ED3FE7 /* AppDelegate.swift in Sources */,
 				84E06211244B64B600ED3FE7 /* APIManager.swift in Sources */,
 				84E0620C244B61B300ED3FE7 /* Meme.swift in Sources */,
 				84E06205244B581100ED3FE7 /* MemeTableViewCell.swift in Sources */,
 				84E06202244B570F00ED3FE7 /* MemeViewController.swift in Sources */,
 				84E061EA244B4FC400ED3FE7 /* SceneDelegate.swift in Sources */,
-				84E06209244B58BD00ED3FE7 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

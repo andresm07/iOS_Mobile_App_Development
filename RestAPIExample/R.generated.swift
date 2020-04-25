@@ -114,6 +114,21 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `defaultImage`.
+    static let defaultImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "defaultImage")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "defaultImage", bundle: ..., traitCollection: ...)`
+    static func defaultImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.defaultImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     /// Nib `MemeTableViewCell`.
