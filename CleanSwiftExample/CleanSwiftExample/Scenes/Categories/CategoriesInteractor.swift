@@ -17,7 +17,7 @@ protocol CategoriesBusinessLogic {
 }
 
 protocol CategoriesDataStore {
-    //var name: String { get set }
+    func getCategory(index: Int) -> NativeCategory
 }
 
 class CategoriesInteractor: CategoriesBusinessLogic, CategoriesDataStore
@@ -25,15 +25,22 @@ class CategoriesInteractor: CategoriesBusinessLogic, CategoriesDataStore
     var presenter: CategoriesPresentationLogic?
     var storeWorker = CategoryWorker(store: CategoryRealmStore())
     var categories = [NativeCategory]()
-    
-    //var name: String = ""
-    
-    // MARK: Do something
+    var worker = CategoriesWorker()
     
     func requestDataSource(request: Categories.DataSource.Request) {
         storeWorker.fetchAll { (categories) in
-            self.categories = categories
-            presenter?.presentDataSource(response: Categories.DataSource.Response(categories: categories))
+            if categories.isEmpty {
+                self.worker.insertInitialCategories(storeWorker: self.storeWorker) {
+                    self.requestDataSource(request: Categories.DataSource.Request())
+                }
+            } else {
+                self.categories = categories
+                presenter?.presentDataSource(response: Categories.DataSource.Response(categories: categories))
+            }
         }
+    }
+    
+    func getCategory(index: Int) -> NativeCategory {
+        return self.categories[index]
     }
 }

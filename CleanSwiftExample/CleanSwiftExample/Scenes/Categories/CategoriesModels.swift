@@ -29,9 +29,9 @@ enum Categories
     struct ViewModel {
         struct DisplayedCategory {
             var title: String
-            var image: UIImage
+            var image: UIImage?
         }
-        var displayedCategory:  DisplayedCategory
+        var displayedCategory: [DisplayedCategory]
     }
   }
 }

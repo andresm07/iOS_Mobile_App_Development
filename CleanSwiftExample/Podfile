@@ -6,6 +6,7 @@ target 'CleanSwiftExample' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'R.swift'
 
   # Pods for CleanSwiftExample
 

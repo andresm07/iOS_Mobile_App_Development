@@ -13,12 +13,15 @@
 import UIKit
 
 protocol CategoriesDisplayLogic: class {
-    func displaySomething(viewModel: Categories.DataSource.ViewModel)
+    func displayDataSource(viewModel: Categories.DataSource.ViewModel)
 }
 
 class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
     var interactor: CategoriesBusinessLogic?
     var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
+    
+    @IBOutlet weak var categoriesTableView: UITableView!
+    var dataSource = [Categories.DataSource.ViewModel.DisplayedCategory]()
     
     // MARK: Object lifecycle
     
@@ -62,30 +65,47 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
-        
-        let worker = CategoryWorker(store: CategoryMemoryStore())
-        worker.fetchAll { (categories) in
-            
-            if categories.isEmpty {
-                print("No hay categorias")
-            }
-            for category in categories {
-                print("\(category.name)")
-            }
-        }
+        self.categoriesTableView.delegate = self
+        self.categoriesTableView.dataSource = self
+        registerCustomCells()
+        requestDataSource()
     }
     
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething() {
+    func requestDataSource() {
         let request = Categories.DataSource.Request()
-        //interactor?.doSomething(request: request)
+        interactor?.requestDataSource(request: request)
     }
     
-    func displaySomething(viewModel: Categories.DataSource.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func displayDataSource(viewModel: Categories.DataSource.ViewModel) {
+        self.dataSource = viewModel.displayedCategory
+        self.categoriesTableView.reloadData()
     }
+    
+    func registerCustomCells() {
+        self.categoriesTableView.register(UINib(resource: R.nib.categoryTableViewCell), forCellReuseIdentifier: R.nib.categoryTableViewCell.name)
+    }
+}
+
+extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.categoriesTableView.dequeueReusableCell(withIdentifier: R.nib.categoryTableViewCell.name) as? CategoryTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setupCell(category: self.dataSource[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.router?.goToNextScreen(index: indexPath.row)
+    }
+    	
 }

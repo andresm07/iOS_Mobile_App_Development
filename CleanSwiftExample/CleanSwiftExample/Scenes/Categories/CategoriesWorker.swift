@@ -13,6 +13,26 @@
 import UIKit
 
 class CategoriesWorker {
-    func doSomeWork() {
+    
+    func insertInitialCategories(storeWorker: CategoryWorker, completionHandler: () -> Void) {
+        let economyCategory = NativeCategory(name: "Economy", imageName: R.image.economy.name, news: [NativeNews]())
+        let indicentsCategory = NativeCategory(name: "Incidents", imageName: R.image.incident.name, news: [NativeNews]())
+        let sportsCategory = NativeCategory(name: "Sports", imageName: R.image.sports.name, news: [NativeNews]())
+        let technologyCategory = NativeCategory(name: "Technology", imageName: R.image.technology.name, news: [NativeNews]())
+        let categories = [economyCategory, indicentsCategory, sportsCategory, technologyCategory]
+        insertCategory(storeWorker: storeWorker, categories: categories, completionHandler: completionHandler)
+    }
+    
+    private func insertCategory(storeWorker: CategoryWorker, categories: [NativeCategory], completionHandler: () -> Void) {
+
+        guard let category = categories.first else {
+            completionHandler()
+            return
+        }
+        var categoriesMutable = categories
+        storeWorker.insert(category: category) {
+            categoriesMutable.remove(at: 0)
+            self.insertCategory(storeWorker: storeWorker, categories: categoriesMutable, completionHandler: completionHandler)
+        }
     }
 }

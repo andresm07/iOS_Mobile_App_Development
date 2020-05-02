@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol CategoriesRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func goToNextScreen(index: Int)
 }
 
 protocol CategoriesDataPassing {
@@ -26,32 +26,18 @@ class CategoriesRouter: NSObject, CategoriesRoutingLogic, CategoriesDataPassing 
     
     // MARK: Routing
     
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    
     
     // MARK: Navigation
     
-    //func navigateToSomewhere(source: CategoriesViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func goToNextScreen(index: Int) {
+        if let newsViewController = R.storyboard.main.newsViewController() {
+            newsViewController.router?.dataStore?.categoryIdentifier = self.dataStore?.getCategory(index: index).identifier
+            self.viewController?.navigationController?.pushViewController(newsViewController, animated: true)
+        }
+    }
     
     // MARK: Passing data
     
-    //func passDataToSomewhere(source: CategoriesDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    
 }

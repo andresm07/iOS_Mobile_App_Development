@@ -15,6 +15,7 @@ import Foundation
 protocol CategoryStoreProtocol {
     func insert(category: NativeCategory, completionHandler:() -> Void)
     func fetchAll(completionHandler:(_ categories: [NativeCategory]) -> Void)
+    func fetch(id: String, completionHandler:(_ category: NativeCategory?) -> Void)
 }
 
 class CategoryWorker {
@@ -31,5 +32,9 @@ class CategoryWorker {
     
     func fetchAll(completionHandler:(_ categories: [NativeCategory]) -> Void) {
         self.store.fetchAll(completionHandler: completionHandler)
+    }
+    
+    func fetch(id: String, completionHandler:(_ category: NativeCategory?) -> Void) {
+        self.store.fetch(id: id, completionHandler: completionHandler)
     }
 }
