@@ -106,6 +106,8 @@ class BudgetListViewController: UIViewController {
 extension BudgetListViewController: AddBudgetTableViewControllerProtocol {
     func addBudget(user: User, budget: Budget) {
         self.realmManager.addBudgetToUser(user: user, name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
+        let transaction = Transaction(detail: "Budget Creation", amount: budget.initialAmount, type: "Deposit")
+        self.realmManager.addTransactionToBudget(transaction: transaction, budget: budget)
         navigationController?.popViewController(animated: true)
         self.budgetListTableView.reloadData()
     }
