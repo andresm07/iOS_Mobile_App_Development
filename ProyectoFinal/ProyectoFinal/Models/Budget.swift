@@ -23,10 +23,11 @@ class Budget: Object {
     
     let owners = LinkingObjects(fromType: User.self, property: "budgets")
     
-    convenience init(name: String, periodicity: String, initialAmount: Float, rollover: Bool) {
+    convenience init(name: String, periodicity: String, initialDate: Date, initialAmount: Float, rollover: Bool) {
         self.init()
         self.name = name
         self.periodicity = periodicity
+        self.initialDate = initialDate
         self.initialAmount = initialAmount
         self.amount = initialAmount
         self.rollover = rollover

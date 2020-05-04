@@ -33,6 +33,7 @@
 		84784C5A2447A39B0032D5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C582447A39B0032D5E2 /* Main.storyboard */; };
 		84784C5C2447A39D0032D5E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84784C5B2447A39D0032D5E2 /* Assets.xcassets */; };
 		84784C5F2447A39D0032D5E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84784C5D2447A39D0032D5E2 /* LaunchScreen.storyboard */; };
+		8482791A245F9AE900A10F6B /* String+ToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84827919245F9AE900A10F6B /* String+ToDate.swift */; };
 		848FE83D2449110A00522AF3 /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83C2449110A00522AF3 /* Date+ToString.swift */; };
 		848FE83F2449112E00522AF3 /* String+FloatValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FE83E2449112E00522AF3 /* String+FloatValue.swift */; };
 		848FE8412449195000522AF3 /* BudgetTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */; };
@@ -72,6 +73,7 @@
 		84784C5B2447A39D0032D5E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84784C5E2447A39D0032D5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84784C602447A39D0032D5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84827919245F9AE900A10F6B /* String+ToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToDate.swift"; sourceTree = "<group>"; };
 		848FE83C2449110A00522AF3 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		848FE83E2449112E00522AF3 /* String+FloatValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FloatValue.swift"; sourceTree = "<group>"; };
 		848FE8402449195000522AF3 /* BudgetTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewHeader.xib; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				848FE83E2449112E00522AF3 /* String+FloatValue.swift */,
 				84A5AAAF244E8D4A004355D5 /* Build+VersionFormatter.swift */,
 				84A5AAB42453A525004355D5 /* Results+ToArray.swift */,
+				84827919245F9AE900A10F6B /* String+ToDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				8436E207244822F600F1CE83 /* RealmManager.swift in Sources */,
 				8436E1E0244809FC00F1CE83 /* AddMoneyTableViewController.swift in Sources */,
 				8436E20124481A4700F1CE83 /* HistoryListViewController.swift in Sources */,
+				8482791A245F9AE900A10F6B /* String+ToDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

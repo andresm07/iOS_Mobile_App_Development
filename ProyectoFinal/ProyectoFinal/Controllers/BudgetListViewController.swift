@@ -86,8 +86,6 @@ class BudgetListViewController: UIViewController {
     private func getBudgets() {
         let budgets = self.realmManager.getAllBudgets()
         if let budgets = budgets, budgets.isEmpty {
-            self.realmManager.insertBudget(name: "Peru", periodicity: "Monthly", initialAmount: 0.0, rollover: true)
-            self.realmManager.insertBudget(name: "Semana Santa 2021", periodicity: "Weekly", initialAmount: 150.0, rollover: false)
             getBudgets()
         } else {
             var userBudgets = [Budget]()
@@ -105,7 +103,7 @@ class BudgetListViewController: UIViewController {
 
 extension BudgetListViewController: AddBudgetTableViewControllerProtocol {
     func addBudget(user: User, budget: Budget) {
-        self.realmManager.addBudgetToUser(user: user, name: budget.name, periodicity: budget.periodicity, initialAmount: budget.initialAmount, rollover: budget.rollover)
+        self.realmManager.addBudgetToUser(user: user, name: budget.name, periodicity: budget.periodicity, initialDate: budget.initialDate, initialAmount: budget.initialAmount, rollover: budget.rollover)
         let transaction = Transaction(detail: "Budget Creation", amount: budget.initialAmount, type: "Deposit")
         self.realmManager.addTransactionToBudget(transaction: transaction, budget: budget)
         navigationController?.popViewController(animated: true)

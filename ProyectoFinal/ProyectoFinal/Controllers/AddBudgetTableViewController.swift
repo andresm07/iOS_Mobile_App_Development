@@ -88,8 +88,8 @@ class AddBudgetTableViewController: UITableViewController {
     }
     
     @objc func saveBudgetAction(sender: UIBarButtonItem) {
-        if let budgetName = self.budgetNameTextField.text, budgetName.count > 0, let budgetPeriodicity = self.budgetPeriodicityPickerTextField.text, budgetPeriodicity.count > 0, let budgetInitialAmountText = self.initialAmoutTextField.text, budgetInitialAmountText.count > 0 {
-            let budget = Budget(name: budgetName, periodicity: budgetPeriodicity, initialAmount: budgetInitialAmountText.floatValue, rollover: self.rolloverSwitch.isOn)
+        if let budgetName = self.budgetNameTextField.text, budgetName.count > 0, let budgetPeriodicity = self.budgetPeriodicityPickerTextField.text, budgetPeriodicity.count > 0, let budgetInitialDate = self.startDatePickerTextField.text, budgetInitialDate.count > 0, let budgetInitialAmountText = self.initialAmoutTextField.text, budgetInitialAmountText.count > 0 {
+            let budget = Budget(name: budgetName, periodicity: budgetPeriodicity, initialDate: budgetInitialDate.stringToDate(), initialAmount: budgetInitialAmountText.floatValue, rollover: self.rolloverSwitch.isOn)
             let userDefaults = UserDefaults.standard
             let activeUser = (self.realmManager.getUser(username: userDefaults.object(forKey: "Username") as! String)?.first)!
             self.delegate?.addBudget(user: activeUser, budget: budget)
